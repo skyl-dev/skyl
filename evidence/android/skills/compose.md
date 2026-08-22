@@ -52,18 +52,18 @@ had a favourite. Re-scored on the outcome, the separation vanished entirely.
 | rule | status | evidence |
 |---|---|---|
 | `INTEROP-2` | not-landing | Haiku 0/2 control and 1/2 with the skill. Sonnet does it unaided. |
-| `EFFECT-1` | unmeasured | Predates the current method. |
-| `EFFECT-2` | unmeasured | Predates the current method. |
-| `EFFECT-3` | unmeasured | Predates the current method. |
-| `EFFECT-4` | unmeasured | Predates the current method. |
-| `REM-1` | unmeasured | Predates the current method. |
-| `REM-2` | unmeasured | Predates the current method. |
-| `SKIP-1` | unmeasured | Predates the current method. |
-| `SKIP-2` | unmeasured | Predates the current method. |
-| `SKIP-3` | unmeasured | Predates the current method. |
-| `LAZY-1` | unmeasured | Predates the current method. |
-| `TEXT-1` | unmeasured | Predates the current method. |
-| `MOD-1` | unmeasured | Predates the current method. |
-| `THEME-1` | unmeasured | Predates the current method. |
+| `EFFECT-1` | not-tempted | Predates the current method. |
+| `EFFECT-2` | not-tempted | Predates the current method. |
+| `EFFECT-3` | not-tempted | Predates the current method. |
+| `EFFECT-4` | not-tempted | Predates the current method. |
+| `REM-1` | not-tempted | Predates the current method. |
+| `REM-2` | not-tempted | Predates the current method. |
+| `SKIP-1` | not-tempted | Predates the current method. |
+| `SKIP-2` | not-tempted | Predates the current method. |
+| `SKIP-3` | not-tempted | Predates the current method. |
+| `LAZY-1` | not-tempted | Predates the current method. |
+| `TEXT-1` | not-tempted | Predates the current method. |
+| `MOD-1` | not-tempted | Predates the current method. |
+| `THEME-1` | not-tempted | Predates the current method. |
 | `INTEROP-1` | retired | Correct in 12 of 12 task-A runs, every arm, zero violations. |
 | `INTEROP-3` | retired | Dropped as an observation; its own *not when* covered the case. |

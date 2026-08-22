@@ -57,16 +57,16 @@ entire Android-Java cluster the evidenced claims actually name.
 | `ASYNC-5` | measured | 0/2 → 2/2 on both models. |
 | `INTEROP-1` | measured | Haiku 0/2 → 2/2. Inert on Sonnet. |
 | `CONVERT-1` | candidate | Its observation-contract clause was unnecessary in 12 of 12 runs. Kept on a weak basis. |
-| `LEAK-2` | unmeasured | Scored as not landing; reading the runs showed the models correctly applied `CONVERT-1` instead. Its own effect is untested. |
-| `NULL-1` | unmeasured | Task A discarded. |
-| `NULL-2` | unmeasured | Not separately tempted. |
-| `INTEROP-2` | unmeasured | Not separately tempted. |
-| `LEAK-1` | unmeasured | Task A discarded. |
-| `LEAK-3` | unmeasured | Task A discarded. |
-| `ASYNC-1` | unmeasured | Task A discarded. Its factual claim was corrected against primary sources. |
-| `ASYNC-2` | unmeasured | Task A discarded. |
-| `ASYNC-4` | unmeasured | Task A discarded. |
-| `CONVERT-2` | unmeasured | Not separately tempted. |
-| `CONVERT-3` | unmeasured | Not separately tempted. |
-| `CONVERT-4` | unmeasured | Added after re-reading the register. Not tempted. |
-| `CONVERT-5` | unmeasured | Added after re-reading the register. Not tempted. |
+| `LEAK-2` | not-tempted | Scored as not landing; reading the runs showed the models correctly applied `CONVERT-1` instead. Its own effect is untested. |
+| `NULL-1` | not-tempted | Task A discarded. |
+| `NULL-2` | not-tempted | Not separately tempted. |
+| `INTEROP-2` | not-tempted | Not separately tempted. |
+| `LEAK-1` | not-tempted | Task A discarded. |
+| `LEAK-3` | not-tempted | Task A discarded. |
+| `ASYNC-1` | not-tempted | Task A discarded. Its factual claim was corrected against primary sources. |
+| `ASYNC-2` | not-tempted | Task A discarded. |
+| `ASYNC-4` | not-tempted | Task A discarded. |
+| `CONVERT-2` | not-tempted | Not separately tempted. |
+| `CONVERT-3` | not-tempted | Not separately tempted. |
+| `CONVERT-4` | not-tempted | Added after re-reading the register. Not tempted. |
+| `CONVERT-5` | not-tempted | Added after re-reading the register. Not tempted. |

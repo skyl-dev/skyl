@@ -43,9 +43,9 @@ eight-rule first draft was also wrong, in the other direction.
 |---|---|---|
 | `REPO-4` | measured | 0/2 → 2/2 on both tasks, both models. Reproduced twice. |
 | `REPO-3` | measured | 0/2 → 2/2 once a task supplied two data origins. Reported dead by a task that did not tempt it. |
-| `VM-2` | unmeasured | Never tempted: neither task needs a `Context` in a state holder. |
-| `VM-3` | unmeasured | Not separately tempted. |
-| `VM-4` | unmeasured | Not separately tempted. |
-| `REPO-1` | unmeasured | Not separately tempted. |
-| `REPO-2` | unmeasured | Not separately tempted. |
+| `VM-2` | not-tempted | Never tempted: neither task needs a `Context` in a state holder. |
+| `VM-3` | not-tempted | Not separately tempted. |
+| `VM-4` | not-tempted | Not separately tempted. |
+| `REPO-1` | not-tempted | Not separately tempted. |
+| `REPO-2` | not-tempted | Not separately tempted. |
 | `VM-1` | retired | Tempted by both tasks and satisfied in every arm including the controls. |

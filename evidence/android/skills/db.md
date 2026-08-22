@@ -50,15 +50,15 @@ which is the strongest argument in this project for the layering rule.
 | `WRITE-1` | measured | Haiku 4/4 runs wrote no transaction; Sonnet 3/3 used one. |
 | `SYNC-2` | not-landing | First form failed in all 10 runs that produced code. Rewritten; the rewrite is untested. |
 | `STORE-3` | measured | Shrunk to a pointer after the seam eval: `db` plus `security` produced 0/2 where `security` alone produced 2/2. |
-| `STORE-1` | unmeasured | Eval 09's task specified the behaviour. |
-| `STORE-2` | unmeasured | Not separately tempted. |
-| `SCHEMA-1` | unmeasured | Not separately tempted. |
-| `SCHEMA-2` | unmeasured | Not separately tempted. |
-| `WRITE-2` | unmeasured | Not separately tempted. |
-| `WRITE-3` | unmeasured | Not separately tempted. |
-| `CACHE-1` | unmeasured | Eval 09's task specified the behaviour. |
-| `CACHE-2` | unmeasured | Not separately tempted. |
-| `CACHE-3` | unmeasured | Not separately tempted. |
-| `SYNC-1` | unmeasured | Not separately tempted. |
-| `READ-1` | unmeasured | Not separately tempted. |
-| `READ-2` | unmeasured | Not separately tempted. |
+| `STORE-1` | not-tempted | Eval 09's task specified the behaviour. |
+| `STORE-2` | not-tempted | Not separately tempted. |
+| `SCHEMA-1` | not-tempted | Not separately tempted. |
+| `SCHEMA-2` | not-tempted | Not separately tempted. |
+| `WRITE-2` | not-tempted | Not separately tempted. |
+| `WRITE-3` | not-tempted | Not separately tempted. |
+| `CACHE-1` | not-tempted | Eval 09's task specified the behaviour. |
+| `CACHE-2` | not-tempted | Not separately tempted. |
+| `CACHE-3` | not-tempted | Not separately tempted. |
+| `SYNC-1` | not-tempted | Not separately tempted. |
+| `READ-1` | not-tempted | Not separately tempted. |
+| `READ-2` | not-tempted | Not separately tempted. |

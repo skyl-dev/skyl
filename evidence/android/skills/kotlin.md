@@ -69,7 +69,7 @@ and the fourth of that shape, which fails in the direction that flatters the ski
 | `ASYNC-2` | measured | Haiku 2/2 → 0/2 violations. Sonnet clean in all six runs. |
 | `ASYNC-4` | measured | Haiku 2/2 → 0/2 violations. Sonnet clean unaided. |
 | `TYPE-1` | measured | Haiku 2/2 → 0/2. Sonnet 1/2 → 0/2. |
-| `ASYNC-3` | unmeasured | Neither task created a group of concurrent children. |
+| `ASYNC-3` | not-tempted | Neither task created a group of concurrent children. |
 | `ASYNC-5` | not-landing | 1 of 12 runs, and that one a skill arm. |
 | `TYPE-3` | not-landing | 12 of 12 runs left a mutable collection in a public signature. |
 | `ASYNC-1` | retired | 0 violations in 12 runs, every arm. |

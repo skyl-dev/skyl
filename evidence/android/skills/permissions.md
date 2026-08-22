@@ -77,7 +77,7 @@ and nothing else. The correction is annotated in place rather than swapped silen
 | `LEAST-1` | measured | Haiku 0/2 → 2/2 on requesting coarse location alone. Added from a diagnosis and then tested. |
 | `GRANT-1` | measured | Sonnet 0/2 → 2/2. Haiku 0/6 in every arm. |
 | `GRANT-3` | not-landing | Haiku requests fine location alone in all six runs. Depends on `LEAST-1` upstream. |
-| `ASK-4` | unmeasured | The rationale ambiguity was not separately tempted. |
-| `GRANT-2` | unmeasured | The degrade half was satisfied 12 of 12; the re-prompt-loop half was never reached. |
-| `DECL-1` | unmeasured | Not separately tempted. |
+| `ASK-4` | not-tempted | The rationale ambiguity was not separately tempted. |
+| `GRANT-2` | satisfied-unaided | The degrade half was satisfied 12 of 12; the re-prompt-loop half was never reached. |
+| `DECL-1` | not-tempted | Not separately tempted. |
 | `ASK-3` | retired | Zero launch-time requests in 12 of 12 runs, every arm including both controls. |

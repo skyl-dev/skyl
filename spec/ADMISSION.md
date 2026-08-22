@@ -84,12 +84,18 @@ A rule in this registry carries one of five statuses in the [rule ledger](../evi
 
 | status | meaning |
 |---|---|
-| `measured` | separated in a control/treatment comparison |
-| `retired` | removed, a control arm did it unprompted |
-| `candidate` | a control arm satisfied it and **it is still shipping**. A retirement proposed, not applied. |
-| `not-landing` | the model gets it wrong **and** the rule does not fix it. Kept, and said so. |
-| `unmeasured` | no task reached it |
+| `measured` | a control arm got it wrong and the skill fixed it |
+| `satisfied-unaided` | a task tempted it and the control **already did it**. Known, and not a separation. |
+| `candidate` | satisfied unaided across more than one task. A retirement proposed, not applied. |
+| `not-landing` | the control gets it wrong **and** the rule does not fix it |
+| `not-tempted` | no task has created the situation. Nothing is known either way. |
+| `retired` | removed |
 | `null` | the whole skill was measured and nothing separated |
+
+**`satisfied-unaided` and `not-tempted` are different facts and used to be one word.** A rule the
+control satisfied on a task built to tempt it has been measured: the answer is that the model already
+does it. A rule no task has reached has not been measured at all. Collapsing them made a well-tested
+skill look untested.
 
 `not-landing`, `candidate` and `null` are published deliberately.
 

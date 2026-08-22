@@ -45,14 +45,14 @@ Register size has predicted result thinness across the family:
 
 | rule | status | evidence |
 |---|---|---|
-| `SCOPE-1` | unmeasured | Tempted and satisfied unaided by both models. Retirement candidate pending a task that separates it. |
-| `SCOPE-2` | unmeasured | Sonnet satisfies it in every arm; Haiku fails in every arm including with the skill. Below the window. |
-| `SCOPE-3` | unmeasured | Never reached: neither task created a genuine domain lifetime. |
-| `GRAPH-1` | unmeasured | Satisfied unaided in 11 of 12 runs. |
-| `GRAPH-2` | unmeasured | Tempted and satisfied unaided by both models. |
-| `GRAPH-3` | unmeasured | Not separately tempted. |
-| `GRAPH-4` | unmeasured | Never reached: neither task created a dependency cycle. |
-| `INJECT-1` | unmeasured | Tempted; both models satisfied it in nearly every run. |
-| `INJECT-2` | unmeasured | Never reached: neither task supplied a runtime parameter. |
-| `INJECT-3` | unmeasured | Not separately tempted. |
-| `TEST-1` | unmeasured | Reached by neither task. |
+| `SCOPE-1` | satisfied-unaided | Tempted and satisfied unaided by both models. Retirement candidate pending a task that separates it. |
+| `SCOPE-2` | not-tempted | Sonnet satisfies it in every arm; Haiku fails in every arm including with the skill. Below the window. |
+| `SCOPE-3` | not-tempted | Never reached: neither task created a genuine domain lifetime. |
+| `GRAPH-1` | satisfied-unaided | Satisfied unaided in 11 of 12 runs. |
+| `GRAPH-2` | satisfied-unaided | Tempted and satisfied unaided by both models. |
+| `GRAPH-3` | not-tempted | Not separately tempted. |
+| `GRAPH-4` | not-tempted | Never reached: neither task created a dependency cycle. |
+| `INJECT-1` | satisfied-unaided | Tempted; both models satisfied it in nearly every run. |
+| `INJECT-2` | not-tempted | Never reached: neither task supplied a runtime parameter. |
+| `INJECT-3` | not-tempted | Not separately tempted. |
+| `TEST-1` | not-tempted | Reached by neither task. |

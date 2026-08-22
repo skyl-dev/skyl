@@ -87,20 +87,20 @@ missing from it fails the build.
 | `BUILD-3` | not-landing | Haiku uses KAPT for Room in 4 of 4 runs, both arms. |
 | `A11Y-1` | candidate | Satisfied in every control tested: Opus 6/6, Sonnet 2/2, Haiku 2/2, qwen yes. Degraded under `opencode` with the skill loaded. Not re-tempted by eval 23. |
 | `L10N-1` | measured | Haiku 2/2 → 0/2 on hand-rolled money patterns once a task gave it a multi-currency total. Was a retirement candidate; the earlier tasks never tempted it. |
-| `BOUND-1` | unmeasured | Tempted by eval 23 and satisfied unaided: 0 violations in 8 runs, both arms. |
-| `BOUND-2` | unmeasured | Tempted by eval 23; moved by one run in each direction, which is noise. |
-| `BOUND-3` | unmeasured | Tempted by eval 23 and satisfied unaided in 8 of 8. |
-| `STATE-2` | unmeasured | Not separately tempted. |
-| `STATE-3` | unmeasured | Not separately tempted. |
-| `DATA-1` | unmeasured | Tempted by eval 23 and satisfied unaided in 8 of 8. |
-| `DATA-3` | unmeasured | Tempted by eval 23; moved by one run in each direction, which is noise. |
-| `WORK-1` | unmeasured | Tempted by eval 23 and satisfied unaided: 0 violations in 8. |
-| `WORK-2` | unmeasured | Tempted by eval 23 and satisfied unaided: 8 of 8 used a scheduler. |
-| `SEC-1` | unmeasured | Not separately tempted. |
+| `BOUND-1` | satisfied-unaided | Tempted by eval 23 and satisfied unaided: 0 violations in 8 runs, both arms. |
+| `BOUND-2` | not-tempted | Tempted by eval 23; moved by one run in each direction, which is noise. |
+| `BOUND-3` | satisfied-unaided | Tempted by eval 23 and satisfied unaided in 8 of 8. |
+| `STATE-2` | not-tempted | Not separately tempted. |
+| `STATE-3` | not-tempted | Not separately tempted. |
+| `DATA-1` | satisfied-unaided | Tempted by eval 23 and satisfied unaided in 8 of 8. |
+| `DATA-3` | not-tempted | Tempted by eval 23; moved by one run in each direction, which is noise. |
+| `WORK-1` | satisfied-unaided | Tempted by eval 23 and satisfied unaided: 0 violations in 8. |
+| `WORK-2` | satisfied-unaided | Tempted by eval 23 and satisfied unaided: 8 of 8 used a scheduler. |
+| `SEC-1` | not-tempted | Not separately tempted. |
 | `SEC-2` | not-landing | 0 of 8 runs declared `exported` on a receiver with an intent filter, or validated its extras. Stated, loaded, ignored. |
-| `SEC-3` | unmeasured | Appeared to fail in 7 of 8; the column was broader than the rule. What the runs logged was an order id, which the rule's boundary permits. |
+| `SEC-3` | not-tempted | Appeared to fail in 7 of 8; the column was broader than the rule. What the runs logged was an order id, which the rule's boundary permits. |
 | `L10N-2` | measured | Haiku 2/2 → 0/2. The control renders the raw server enum; the treated arm maps it. |
-| `A11Y-2` | unmeasured | Not separately tempted. |
+| `A11Y-2` | not-tempted | Not separately tempted. |
 | `BUILD-1` | retired | Shrinking present in 8 of 8 runs, every arm. |
 | `BUILD-2` | retired | No run violated it, and the task could not tempt the violation. |
 

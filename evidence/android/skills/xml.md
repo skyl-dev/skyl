@@ -49,11 +49,11 @@ included, which is the behaviour the corrected rule predicts.
 | `HOST-1` | measured | Separated on Haiku, inert on Sonnet. |
 | `LIST-1` | candidate | Satisfied by every arm including the controls. Corpus-backed. |
 | `HOST-2` | candidate | Satisfied by every arm including the controls. Corpus-backed. |
-| `HOST-4` | unmeasured | Not separately tempted. |
-| `STATE-2` | unmeasured | Not separately tempted. |
-| `LAYOUT-1` | unmeasured | Not separately tempted. |
-| `LAYOUT-2` | unmeasured | Not separately tempted. |
-| `BIND-1` | unmeasured | Not separately tempted. |
-| `BIND-2` | unmeasured | Not separately tempted. |
-| `RES-1` | unmeasured | Not separately tempted. |
+| `HOST-4` | not-tempted | Not separately tempted. |
+| `STATE-2` | not-tempted | Not separately tempted. |
+| `LAYOUT-1` | not-tempted | Not separately tempted. |
+| `LAYOUT-2` | not-tempted | Not separately tempted. |
+| `BIND-1` | not-tempted | Not separately tempted. |
+| `BIND-2` | not-tempted | Not separately tempted. |
+| `RES-1` | not-tempted | Not separately tempted. |
 | `HOST-3` | retired | Cut before shipping: a `ComposeView`'s state using `rememberSaveable` was already universal. |

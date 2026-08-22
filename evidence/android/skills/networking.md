@@ -42,14 +42,14 @@ than richness.
 | `AUTH-1` | candidate | Satisfied unaided by both models on a task built to tempt it. |
 | `AUTH-2` | candidate | Satisfied unaided by both models on a task built to tempt it. |
 | `AUTH-3` | candidate | Satisfied unaided by both models on a task built to tempt it. |
-| `CLIENT-1` | unmeasured | Not separately tempted. |
-| `CLIENT-3` | unmeasured | Not exercised by either task. |
-| `WIRE-1` | unmeasured | Not separately tempted. |
-| `WIRE-2` | unmeasured | Not separately tempted. |
-| `WIRE-3` | unmeasured | Not exercised by either task. |
-| `WIRE-4` | unmeasured | Not exercised by either task. |
-| `FAIL-1` | unmeasured | Not separately tempted. |
-| `FAIL-2` | unmeasured | Not separately tempted. |
-| `FAIL-3` | unmeasured | Not exercised by either task. |
-| `FAIL-4` | unmeasured | Not exercised by either task. |
-| `STREAM-1` | unmeasured | Not exercised by either task. |
+| `CLIENT-1` | not-tempted | Not separately tempted. |
+| `CLIENT-3` | not-tempted | Not exercised by either task. |
+| `WIRE-1` | not-tempted | Not separately tempted. |
+| `WIRE-2` | not-tempted | Not separately tempted. |
+| `WIRE-3` | not-tempted | Not exercised by either task. |
+| `WIRE-4` | not-tempted | Not exercised by either task. |
+| `FAIL-1` | not-tempted | Not separately tempted. |
+| `FAIL-2` | not-tempted | Not separately tempted. |
+| `FAIL-3` | not-tempted | Not exercised by either task. |
+| `FAIL-4` | not-tempted | Not exercised by either task. |
+| `STREAM-1` | not-tempted | Not exercised by either task. |

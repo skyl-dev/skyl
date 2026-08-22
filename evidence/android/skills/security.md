@@ -73,9 +73,9 @@ cited for it was manufactured, and the correction is recorded where the claim wa
 | `OUT-1` | measured | Haiku 0/2 → 2/2 on declaring backup rules. The both-attributes half landed 1 of 2, which is noise. |
 | `STORE-1` | measured | `security` alone produces keystore-backed encryption 4/4 against 0/4 in controls. |
 | `IPC-1` | measured | Restraint held: all 12 task-B runs kept the legitimate implicit intent, every arm. |
-| `KEY-1` | unmeasured | Never tempted: every run took the library path. |
-| `KEY-2` | unmeasured | Never tempted: every run took the library path. |
-| `OUT-2` | unmeasured | Not separately tempted. |
-| `IPC-2` | unmeasured | Narrowed after the flag half proved unnecessary. `FLAG_MUTABLE` appears in 0 of 12 runs, so the combination it now describes is untested. |
-| `IPC-3` | unmeasured | Reached by neither task. |
-| `TRUST-1` | unmeasured | Reached by neither task. |
+| `KEY-1` | satisfied-unaided | Never tempted: every run took the library path. |
+| `KEY-2` | satisfied-unaided | Never tempted: every run took the library path. |
+| `OUT-2` | not-tempted | Not separately tempted. |
+| `IPC-2` | not-tempted | Narrowed after the flag half proved unnecessary. `FLAG_MUTABLE` appears in 0 of 12 runs, so the combination it now describes is untested. |
+| `IPC-3` | not-tempted | Reached by neither task. |
+| `TRUST-1` | not-tempted | Reached by neither task. |

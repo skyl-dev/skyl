@@ -60,8 +60,8 @@ twice as two instances does not.**
 | rule | status | evidence |
 |---|---|---|
 | `SEAM-1` | measured | Sonnet: parameter seam 0/2 → 2/2, mutable seam 2/2 → 0/2. Haiku moved 1/2 on each, which is noise. |
-| `SCHED-1` | unmeasured | The main-dispatcher replacement was noisy on Haiku and already universal on Sonnet. |
-| `KNOW-1` | unmeasured | Neither task tempted an assertion on mechanism. |
+| `SCHED-1` | not-tempted | The main-dispatcher replacement was noisy on Haiku and already universal on Sonnet. |
+| `KNOW-1` | not-tempted | Neither task tempted an assertion on mechanism. |
 | `REACH-1` | retired | 12 of 12 runs used a fake rather than a mock. |
 | `TIME-1` | retired | 0 violations in 12 runs, every arm. |
 | `STATE-1` | retired | 10 of 12, no arm pattern. |
