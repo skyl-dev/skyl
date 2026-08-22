@@ -4,8 +4,8 @@
     "android"
   ],
   "counts": {
-    "skills": 7,
-    "rules": 94,
+    "skills": 9,
+    "rules": 120,
     "retired": 9
   },
   "skills": [
@@ -151,6 +151,44 @@
       "installed_words": 1426
     },
     {
+      "name": "android/di",
+      "axis": "topic",
+      "family": "android",
+      "version": "1.0.0",
+      "requires": [
+        "android/core"
+      ],
+      "detect": {
+        "gradle_dependency": [
+          "com.google.dagger:hilt-android",
+          "io.insert-koin:koin-android",
+          "com.google.dagger:dagger",
+          "dev.zacsweers.metro:runtime"
+        ]
+      },
+      "path": "skills/android/di",
+      "rules": {
+        "total": 11,
+        "must": 8,
+        "should": 3,
+        "ids": [
+          "SCOPE-1",
+          "SCOPE-2",
+          "SCOPE-3",
+          "GRAPH-1",
+          "GRAPH-2",
+          "GRAPH-3",
+          "GRAPH-4",
+          "INJECT-1",
+          "INJECT-2",
+          "INJECT-3",
+          "TEST-1"
+        ]
+      },
+      "retired": [],
+      "installed_words": 1089
+    },
+    {
       "name": "android/java",
       "axis": "language",
       "family": "android",
@@ -263,6 +301,48 @@
         "VM-1"
       ],
       "installed_words": 813
+    },
+    {
+      "name": "android/networking",
+      "axis": "topic",
+      "family": "android",
+      "version": "1.0.0",
+      "requires": [
+        "android/core"
+      ],
+      "detect": {
+        "gradle_dependency": [
+          "com.squareup.retrofit2:retrofit",
+          "com.squareup.okhttp3:okhttp",
+          "io.ktor:ktor-client-core",
+          "io.ktor:ktor-client-android"
+        ]
+      },
+      "path": "skills/android/networking",
+      "rules": {
+        "total": 15,
+        "must": 11,
+        "should": 4,
+        "ids": [
+          "CLIENT-1",
+          "CLIENT-2",
+          "CLIENT-3",
+          "WIRE-1",
+          "WIRE-2",
+          "WIRE-3",
+          "WIRE-4",
+          "FAIL-1",
+          "FAIL-2",
+          "FAIL-3",
+          "FAIL-4",
+          "AUTH-1",
+          "AUTH-2",
+          "AUTH-3",
+          "STREAM-1"
+        ]
+      },
+      "retired": [],
+      "installed_words": 1321
     },
     {
       "name": "android/xml",
