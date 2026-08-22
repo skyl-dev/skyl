@@ -38,6 +38,30 @@ fixtures include near-misses.
 grounds that it costs little and the sample is two per cell, which is a weaker justification than
 the bar normally accepts. Marked rather than quietly retained.
 
+## A second eval, on the rules the first one could not reach
+
+24 runs, two tasks, Haiku 4.5 and Sonnet 5, control / `+core` / `+core+java`.
+
+**Naming the `Looper` explicitly separated again, on Haiku, 0/2 to 2/2.** The seed ships an activity
+holding a `Handler` built with the no-argument constructor, which silently adopts whatever thread it
+is created on and is deprecated at API 30. Haiku's treated arm names the looper in both runs; its
+control does not. Sonnet sidesteps the question entirely by removing the `Handler` and using a
+different mechanism, which is also correct and is why it shows no movement.
+
+**The rest of the screen work was already right.** Moving the build off the main thread, disposing
+the Rx subscription, tearing down in `onDestroy`, and guarding the nullable lookup were satisfied in
+11 or 12 runs of 12, controls included. Nobody reached for `AsyncTask`.
+
+**The conversion cluster is the interesting result, and it is a negative one.** Converting the
+singleton to Kotlin, keeping the Java callers compiling, and preserving the nullable signature were
+satisfied in 12 of 12 runs, in every arm. So was keeping the static `Context`, which is the
+precedence question: the structural rule forbids it and the conversion rule protects it, and every
+run kept it. That reproduces what eval 11 found, and confirms the precedence sentence added
+afterwards did not make the file worse.
+
+**Writing a characterization test before converting did not land: 1 run of 12.** Stated, loaded, and
+ignored in every other run.
+
 ## Corrections from primary sources
 
 Two factual errors were caught by checking the platform documentation rather than the corpus.

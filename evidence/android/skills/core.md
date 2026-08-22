@@ -67,10 +67,10 @@ which is one run and is noise. Kept, and recorded as not landing rather than as 
 
 Both were added on the strength of a large claim register and removed by the first measurement.
 
-## What was not measured
+## Not reached by either task
 
-The rules predating eval 01 carry the evidence in that eval's write-up rather than a per-rule score.
-`WORK-1`, `WORK-2` and the localization rules were not separately tempted by either task.
+Eval 01's own write-up carries the evidence for the rules that predate it. Eval 23 then reached most
+of what it had not: what it found is above.
 
 ## Method
 

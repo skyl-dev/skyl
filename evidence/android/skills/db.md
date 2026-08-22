@@ -42,3 +42,24 @@ mattered, on the model least able to absorb it. Sonnet was unaffected.
 
 `STORE-3` is now a pointer. **Two skills carrying one hazard measurably degrades the smaller model**,
 which is the strongest argument in this project for the layering rule.
+
+## A later eval, stopped part-way
+
+16 of 24 runs before the eval was halted, so this is partial and recorded as such: task A complete on
+both models, task B on Haiku only.
+
+**Schema work was already right.** Adding a column to a database documented as already shipped
+produced a version bump and a migration in 10 runs of 10, controls included, and nobody enabled
+destructive fallback. Exporting the schema is weaker, at 3 of 10.
+
+**Offline editing was already right.** Writing locally first, marking the row pending, observing the
+store rather than polling, and keeping the main-thread guard were satisfied in 9 or 10 runs of 10.
+Scheduling durable work to send the edit later split by model: Sonnet did it, Haiku did not, in any
+arm.
+
+**The seed's own bug was fixed by every arm.** `refresh()` shipped as clear-then-fetch, which empties
+the app if the fetch fails. All six Haiku runs replaced it, controls included.
+
+**Remote deletion, staleness and forced refresh moved by one run each**, which is noise at this
+sample size, and the eval stopped before Sonnet could add anything.
+
