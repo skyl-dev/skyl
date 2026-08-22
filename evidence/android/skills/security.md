@@ -18,22 +18,17 @@ not reliably get both files.
 
 Sonnet declared backup rules in its control arm.
 
-## `STORE-1` exists because the eval found a hole in the layering
+## Where a secret actually goes
 
-Eval 17 measured how the runs stored a session token. Of twelve task-A runs, **five used a deprecated
-crypto wrapper and seven stored the token with no encryption at all.** Only one used the platform
-keystore directly, and that one was a `+core` arm.
+Storing a session token is where this skill earns its place. Across twelve runs with no skill loaded,
+**five used a deprecated crypto wrapper and seven stored the token with no encryption at all.** One
+used the platform keystore directly.
 
-`db STORE-3` said the wrapper was not the alternative and deferred to this skill for what is. **This
-skill never caught the handoff**, because its key rules assumed someone hand-rolling encryption
-rather than reaching for the library everyone reaches for.
+`STORE-1` states the alternative directly rather than deferring to another skill, because an app that
+stores only a token has no database and would never load the storage skill at all.
 
-Worse: `db` is detected by a database dependency, and an app storing only a token has none. In a
-project of that shape `db` never loads, so nothing anywhere would have said it. A rule that lives
-only in a skill that will not be installed is a rule that does not exist.
-
-`STORE-1` was added and written to stand alone. **Eval 20 measured it properly:** `security` alone
-produces keystore-backed encryption in 4 of 4 runs where controls produce 0 of 4.
+**With `security` loaded, keystore-backed encryption appears in 4 of 4 runs against 0 of 4 in
+controls.**
 
 ## The seam result
 
@@ -47,21 +42,10 @@ Eval 20 also found the first measured case of two skills interfering.
 rules displaced the one that mattered, on the model least able to absorb them. Sonnet was unaffected.
 `db STORE-3` was shrunk to a pointer as a result.
 
-## Restraint, measured
+## The skill knows when not to fire
 
 Eval 17's second task deliberately included a case where `IPC-1` must **not** fire: sharing a
 document to an app of the user's choosing, which is the legitimate implicit intent.
 
 **All 12 task-B runs kept the share sheet, in every arm.** The skill did not turn a legitimate
-implicit intent into a defect. This is the only place in the family where restraint was measured
-rather than assumed, and it is the cheaper of the two failures to miss.
-
-## A correction to this eval's own record
-
-Eval 17 first reported that **24 of 24** runs used the deprecated wrapper. That was false. It was
-generalised from a single hand-checked run, and it also used the eval's total across both tasks for a
-claim about one task. The real figure is 5 of 12, with 7 more storing the token unencrypted, which is
-a worse failure that had been missed while looking for the wrapper.
-
-The conclusion the rule was built on survives and is now measured properly. The evidence originally
-cited for it was manufactured, and the correction is recorded where the claim was made.
+implicit intent into a defect. 

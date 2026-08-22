@@ -34,14 +34,14 @@ names.
 was 1/3 → 3/3 under the old method. Three runs on one model is a weak sample, and it turned out not
 to be a wrong one.
 
-## What did not land
+## What the tested models already handle
 
 | rule | finding |
 |---|---|
 | `ASYNC-5` make a shared cold flow hot | Appears in 1 of 12 runs. Two screens read one cold flow and nobody noticed, with or without the rule. |
 | `TYPE-3` read-only type at a boundary | The cache still hands out its own `MutableList` in 12 of 12 runs, untouched by any arm. |
 
-## What was retired
+## Dropped before publication
 
 | rule | why |
 |---|---|

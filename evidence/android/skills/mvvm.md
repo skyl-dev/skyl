@@ -21,7 +21,7 @@ dead: that task had a single data origin, so there was nothing for the rule to a
 with two origins moved it 0/2 to 2/2. **A rule scored against a task that never tempted it has not
 been measured**, and that is now a published rule rather than a lesson.
 
-## What was retired
+## Dropped before publication
 
 `VM-1` was tempted by both tasks and satisfied in every arm, including both controls. Removed.
 

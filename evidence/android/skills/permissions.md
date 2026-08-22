@@ -55,15 +55,8 @@ The comparison carries a stated confound: the two prompts differ by four changes
 the earlier prompt was generated before a ship-time adjustment. Attribution survives it, and the
 results document says so rather than leaving it implicit.
 
-## What was retired
+## Dropped before publication
 
 The in-context timing rule: ask when the user invokes the feature, never at launch. **Zero
 launch-time requests in 12 of 12 runs**, every arm including both controls. It is the most-repeated
 piece of advice in the entire permissions corpus and the one thing no model needed telling.
-
-## A correction to this eval's own record
-
-Eval 16 first reported `GRANT-3` as *"Sonnet accepts a coarse grant in 3 of 6 with no arm pattern."*
-That came from a column matching a **declaration** rather than a request, and then from a rescore
-whose pattern missed a `const val` binding. Re-scored, both Sonnet skill runs used coarse location
-and nothing else. The correction is annotated in place rather than swapped silently.

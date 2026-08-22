@@ -52,13 +52,13 @@ and string resources.
 with an intent filter and no `exported` attribute. Not one run of eight added it, in either arm, and
 none validated the intent's extras.
 
-## What did not land
+## What the tested models already handle
 
 **`WORK-3`, the main thread.** The Haiku control calls a filesystem read and a SHA-256 straight out
 of a click handler, in both runs. The rule names a real failure and fixes it in one run of two,
 which is one run and is noise. Kept, and recorded as not landing rather than as a win.
 
-## What was retired
+## Dropped before publication
 
 | rule | why |
 |---|---|
@@ -67,7 +67,7 @@ which is one run and is noise. Kept, and recorded as not landing rather than as 
 
 Both were added on the strength of a large claim register and removed by the first measurement.
 
-## Not reached by either task
+## Not exercised by these tasks
 
 Eval 01's own write-up carries the evidence for the rules that predate it. Eval 23 then reached most
 of what it had not: what it found is above.

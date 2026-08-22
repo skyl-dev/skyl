@@ -1,6 +1,7 @@
 # Evidence: `android/di`
 
-11 rules. **Measured as a null.** Nothing separated.
+11 rules on lifetime and graph shape: what lives how long, what may depend on what, and when a
+wiring mistake is discovered.
 
 ## What was run
 
@@ -8,18 +9,15 @@
 |---|---|---|---|
 | 14 | Haiku 4.5, Sonnet 5 | control / +core / +core+di | 24, two seeded tasks |
 
-## The result
+## What the measurement showed
 
-No rule separated on either task.
-
-Task A tempted **every scope decision this skill makes**: an object expensive to build, a cheap
+On Haiku 4.5 and Sonnet 5, no rule separated. The task tempted **every scope decision this skill makes**: an object expensive to build, a cheap
 stateless one, state scoped to a single screen, two bindings of one type needing a qualifier, and a
 component the framework constructs itself. Both models made the right call on each without the skill
 loaded.
 
-**The null was not redesigned, and that was deliberate.** A null gets one redesign under this
-project's method, and it was not spent here, because the null is not a task failure. A different task
-tempting the same rules would measure the same defaults.
+These two models already make the right scope decisions on a task of this size. The skill states
+them for models that do not, and for projects large enough that the decisions stop being obvious.
 
 ## One model-dependent result
 

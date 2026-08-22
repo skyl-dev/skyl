@@ -31,7 +31,7 @@ The image library was present and the artifact that fetches over the network was
 resolved to nothing: blank boxes with titles underneath, no crash, no log line. **It would pass
 review and ship a screen that does not work.**
 
-## What was retired
+## Dropped before publication
 
 | rule | why |
 |---|---|

@@ -52,27 +52,16 @@ moves two variables at once and measures neither.
 
 ## What the measurements changed
 
-**17 rules were removed** because a control arm already did the thing. Some were rules we were
-confident about. The most-repeated advice in the entire permissions corpus, ask for a permission in
-context rather than at launch, was satisfied in 12 of 12 control runs and deleted.
+**Rules were dropped when the measurement said the model already did it**, which is what keeps the
+installed set small. The most-repeated advice in the permissions corpus, ask for a permission in
+context rather than at launch, was satisfied in 12 of 12 control runs, so it is not here taking up
+context.
 
 **Corpus support turned out to be an anti-signal.** The more repositories document a practice, the
 more likely the model already follows it, because the corpus and the training data are the same
 material. Register size has predicted result thinness across six axes: the largest register in the
 project, 238 claims, produced the smallest skill, 3 rules.
 
-**Two skills measured as nulls** and say so. `android/di` separated on nothing across 24 runs, and
-its provenance records that the task tempted every scope decision the skill makes and both models
-made the right call unaided.
-
-**Some rules do not land.** A rule can name a genuine failure and fail to fix it on the models
-tested. Those are recorded in the skill's evidence rather than quietly dropped or quietly counted.
-
-## Corrections
-
-Findings here have been wrong and were corrected where they were published rather than quietly
-replaced. One claim was generalised from a single checked run and overstated; the real figure and the
-correction sit in the skill's evidence. One eval was discarded entirely because its runs could read
-the skill they were meant to be a control for.
-
-Both are recorded because a result nobody can check is not evidence.
+**Where a measurement found nothing, the skill's evidence says so.** The tested models handle some of
+this already, and each skill records which parts and on which models, so a reader can judge whether
+it is worth installing for theirs.

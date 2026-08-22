@@ -18,7 +18,7 @@ Checking OkHttp's actual defaults showed the per-operation timeouts are ten seco
 `callTimeout` defaults to none, so a request can keep resetting its own ten seconds while the call as
 a whole never finishes.
 
-## Satisfied unaided
+## Already handled by the tested models
 
 `AUTH-1`, `AUTH-2` and `AUTH-3` were satisfied unaided by both models **on a task built to tempt
 them**. The sample is two runs per cell, so this is recorded as a result rather than treated as final.

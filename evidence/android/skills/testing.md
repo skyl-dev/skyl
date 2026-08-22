@@ -33,7 +33,7 @@ converted the object to a class with a constructor parameter.
 **Static mocks: 0 of 12. Reflection: 0 of 12.** The wrong answers expected beforehand are not the
 wrong answers models reach for. They reach for a widened mutable field, which looks responsible.
 
-## What was retired
+## Dropped before publication
 
 Four rules, each with zero violations across twelve runs and every one predicted as
 corpus-saturated before the run.

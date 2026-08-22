@@ -17,14 +17,14 @@ eval. The rest are unmeasured.
 `WRITE-1`, a multi-statement write is one transaction. Haiku wrote delete-then-insert with no
 transaction in **4 of 4** runs that used the pattern. Sonnet used a transaction in 3 of 3.
 
-## An eval that could not test this skill
+## What one task could not show
 
-Eval 09 returned a null and the null was not informative: **the task specified the behaviour most of
-these rules describe**, so four rules had nothing to act on and the rest were told what to do by the
-prompt. It is recorded because a null from a task that cannot tempt the rules is not evidence of
+One eval returned nothing, because its task **specified the behaviour most of these rules describe**:
+four rules had nothing to act on and the rest were told what to do by the prompt. It is recorded so
+the result is not read as a measurement of the skill. It is recorded because a null from a task that cannot tempt the rules is not evidence of
 absence, and reading it as one would have deleted a skill on no information.
 
-## A rule that failed to land, and why it was the rule's fault
+## A rule rewritten after measurement
 
 `SYNC-2` first read *"resolved by a server-assigned version, never by device clocks"*. It failed to
 land in **every** treated run: all 10 runs that produced code used the device clock, because the
@@ -43,7 +43,7 @@ mattered, on the model least able to absorb it. Sonnet was unaffected.
 `STORE-3` is now a pointer. **Two skills carrying one hazard measurably degrades the smaller model**,
 which is the strongest argument in this project for the layering rule.
 
-## A later eval, stopped part-way
+## A later eval, partial
 
 16 of 24 runs before the eval was halted, so this is partial and recorded as such: task A complete on
 both models, task B on Haiku only.
@@ -62,4 +62,3 @@ the app if the fetch fails. All six Haiku runs replaced it, controls included.
 
 **Remote deletion, staleness and forced refresh moved by one run each**, which is noise at this
 sample size, and the eval stopped before Sonnet could add anything.
-

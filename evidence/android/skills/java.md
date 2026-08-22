@@ -30,14 +30,14 @@ structural rules during a conversion.
 The first reading of that result was wrong: what looked like a rule failing was two rules being
 ordered correctly.
 
-## Satisfied unaided
+## Already handled by the tested models
 
 `CONVERT-1` carries an observation-contract clause that eval 11 found unnecessary: all 12 runs kept
 `java.util.Observable` and none swapped it for a `Flow`, in any arm on either model. Kept on the
 grounds that it costs little and the sample is two per cell, which is a weaker justification than
 the bar normally accepts. Marked rather than quietly retained.
 
-## A second eval, on the rules the first one could not reach
+## A second eval
 
 24 runs, two tasks, Haiku 4.5 and Sonnet 5, control / `+core` / `+core+java`.
 
