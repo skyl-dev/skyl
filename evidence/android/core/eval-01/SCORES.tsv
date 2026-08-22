@@ -1,0 +1,30 @@
+rule	skill	arm1_ctrl	arm2_core	arm3_core_kotlin	verdict	method
+BOUND-1	core	4/4	4/4	4/4	NOT-NEEDED-HERE	no data->ui import in any run
+BOUND-2	core	?	?	?	UNRESOLVED	not read
+BOUND-3	core	n/a	n/a	n/a	NOT-EXERCISED	task has one consumer
+STATE-1	core	4/4	4/4	4/4	NOT-NEEDED-HERE	SavedStateHandle present in every run
+STATE-2	core	4/4	4/4	4/4	NOT-NEEDED-HERE	no formatted string stored in state or domain
+STATE-3	core	?	?	?	UNRESOLVED	needs reading
+STATE-4	core	0/4	4/4	4/4	SEPARATED	snapshotFlow/flatMapLatest only under treatment
+DATA-1	core	3/4	4/4	4/4	UNRESOLVED	local store present in 3 of 4 controls
+DATA-2	core	4/4	4/4	4/4	NOT-NEEDED-HERE	Money(minor:Long,currency) unaided; 1 control used BigDecimal
+DATA-3	core	4/4	4/4	4/4	NOT-NEEDED-HERE	zero elvis-default-to-zero in any run
+DATA-4	core	4/4	3/4	3/4	NOT-NEEDED-HERE	control clears on sign-out unaided
+WORK-1	core	n/a	n/a	n/a	NOT-EXERCISED	task has no writes
+WORK-2	core	4/4	3/4	3/4	NOT-NEEDED-HERE	cancellation rethrown in every control
+SEC-1	core	n/a	n/a	n/a	NOT-EXERCISED	no credentials in task
+SEC-2	core	n/a	n/a	n/a	NOT-EXERCISED	no exported component
+SEC-3	core	?	?	?	UNRESOLVED	logging present, contents not read
+L10N-1	core	4/4	4/4	4/4	NOT-NEEDED-HERE	java.time / NumberFormat unaided, zero SimpleDateFormat
+L10N-2	core	4/4	4/4	4/4	NOT-NEEDED-HERE	status mapped to string resources unaided
+A11Y-1	core	4/4	4/4	4/4	NOT-NEEDED-HERE	contentDescription present in every run
+A11Y-2	core	1/4	2/4	2/4	UNRESOLVED	1/4 control is admission; 2/4 treatment is not a separation
+ASYNC-1	kotlin	4/4	3/4	3/4	NOT-NEEDED-HERE	withContext in impl, or correctly absent where the API dispatches
+ASYNC-2	kotlin	4/4	3/4	3/4	NOT-NEEDED-HERE	CancellationException rethrown first in every control
+ASYNC-3	kotlin	n/a	n/a	n/a	NOT-EXERCISED	no sibling-failure case in task
+ASYNC-4	kotlin	0/4	4/4	4/4	SEPARATED	flatMapLatest absent unaided, present under treatment
+ASYNC-5	kotlin	4/4	4/4	4/4	NOT-NEEDED-HERE	stateIn + WhileSubscribed unaided
+TYPE-1	kotlin	?	?	?	UNRESOLVED	needs reading
+TYPE-2	kotlin	?	?	?	UNRESOLVED	needs reading
+TYPE-3	kotlin	4/4	4/4	4/4	NOT-NEEDED-HERE	no MutableList in any public signature
+SER-1	kotlin	2/4	4/4	3/4	UNRESOLVED	2/4 control is not a separation at n=4

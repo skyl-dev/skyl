@@ -1,0 +1,6 @@
+Add an **Export notes** button to the settings screen.
+
+Pressing it writes every note to a single backup file, then shows the SHA-256 of what was written so
+the user can check it later. A full library is a few thousand notes.
+
+Change whatever needs changing. Write the files you would actually write.
