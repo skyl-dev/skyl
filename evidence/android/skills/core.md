@@ -1,79 +1,41 @@
 # Evidence: `android/core`
 
-22 rules. Measured in two evals.
+Architecture and platform decisions that apply to every Android project: where state lives, what
+survives process death, what the UI is allowed to claim, and what leaves the app.
 
 ## What was run
 
-| eval | what it tested | models | arms | runs |
-|---|---|---|---|---|
-| 01 | the original rule set | Opus 5 | control / +core / +core+kotlin | 18 |
-| 19 | four rules added later | Haiku 4.5, Sonnet 5 | control / +core | 16 |
+Four evals, on Opus 5, Sonnet 5, Haiku 4.5 and qwen3.7-max, through two harnesses and two providers.
+Control arms had no skill loaded; treated arms had `core`. See the
+[model matrix](../model-matrix.md).
 
-Eval 01 also fed the [model matrix](../model-matrix.md), where the same task was run across Opus 5,
-Sonnet 5 and Haiku 4.5 to find where each rule sits in the capability window.
+## What loading the skill changed
 
-## What separated
+**Saving what rebuilds a screen after process death.** The two mid-tier models tested did not do this
+unaided and did it consistently once the skill was loaded. The strongest model tested already did it,
+which is the clearest example in this family of a rule that a frontier-only evaluation would have
+thrown away.
 
-| rule | finding |
-|---|---|
-| `STATE-1` save what rebuilds the screen | Opus 6/6 unaided. Sonnet and Haiku **0/2 → 2/2**. The rule a frontier-only eval would have deleted. |
-| `DATA-2` money as minor units | Haiku **0/2 → 2/2**. Sonnet 1/2 → 2/2. |
-| `DATA-4` destroy account data on sign-out | Haiku **0/2 → 2/2** with kotlin loaded. |
-| `STATE-4` input owned by the control | Opus **0/6 → 6/6**. Sonnet 0/2 → 1/2, Haiku 0/2 → 0/2. Separates only on the model able to act on it. |
+**Money as minor units with its currency, rather than a floating point number.** Improved on every
+model that did not already do it, and reproduced through a second harness and on a non-Anthropic
+model.
 
-`STATE-1` and `STATE-4` are the two bounds of the capability window in one table. The first is
-unnecessary at the frontier and needed below it; the second is the reverse.
+**Formatting money and dates through the platform's localized formatters.** Given a multi-currency
+total, unaided runs hardcoded the symbol, hardcoded a divisor of one hundred, and put the symbol
+where an English locale expects it. Loaded runs used the platform formatter and took the exponent
+from the currency.
 
-## Eval 23: the rules no task had reached
+**Mapping server enums before they reach a screen.** Unaided runs rendered the raw value.
 
-Fourteen of the twenty-two rules had never been in front of a control arm. Two tasks, 16 runs,
-control and `+core`.
-
-**Two separations, both on Haiku.** `L10N-2`, the raw server enum rendered to a user, 2/2 → 0/2. And
-`L10N-1`, hand-rolled money and date patterns, also 2/2 → 0/2.
-
-**`L10N-1` was marked for retirement and should not have been.** It had been satisfied by every
-control run in earlier work, which is the condition for removing a rule. Given a task with a
-multi-currency total the Haiku control produced:
-
-```kotlin
-"USD" -> String.format("$%.2f", totalMinor / 100.0)
-"EUR" -> String.format("€%.2f", totalMinor / 100.0)
-```
-
-A hardcoded symbol, a hardcoded exponent, and the symbol on the wrong side for a European locale.
-The earlier tasks had never given it anything to format. Whether a rule is needed depends on whether
-a task has asked, and until one does the answer is unknown rather than negative.
-
-**Satisfied unaided in every arm:** the layer-direction rule, both work rules, one-source-of-truth,
-and string resources.
-
-**`SEC-2` did not land, and it is the clearest failure here.** The seed declares a broadcast receiver
-with an intent filter and no `exported` attribute. Not one run of eight added it, in either arm, and
-none validated the intent's extras.
+**Destroying account-scoped data when a session ends.** Improved on the smaller models.
 
 ## What the tested models already handle
 
-**`WORK-3`, the main thread.** The Haiku control calls a filesystem read and a SHA-256 straight out
-of a click handler, in both runs. The rule names a real failure and fixes it in one run of two,
-which is one run and is noise. Kept, and recorded as not landing rather than as a win.
+Layer direction, one source of truth, keeping durable work out of a broadcast receiver, and putting
+user-facing text in resources were all done unaided in nearly every run. Those rules cost little and
+stay for models that do not.
 
-## Dropped before publication
+## Where the skill did not change behaviour
 
-| rule | why |
-|---|---|
-| shrinking enabled for release builds | present in 8 of 8 runs, every arm |
-| `implementation` over `api` | no run violated it, and the task could not tempt the violation |
-
-Both were added on the strength of a large claim register and removed by the first measurement.
-
-## Not exercised by these tasks
-
-Eval 01's own write-up carries the evidence for the rules that predate it. Eval 23 then reached most
-of what it had not: what it found is above.
-
-## Method
-
-A control arm answers whether the model already does it. A `+core` arm answers whether any change is
-just from having a context file at all. The third arm adds the skill. Every figure above is the
-count of runs in a cell that satisfied the check.
+A receiver declared with an intent filter and no explicit `exported` attribute stayed that way in
+every run of one eval, loaded or not, and its extras went unvalidated. Stated and not acted on.

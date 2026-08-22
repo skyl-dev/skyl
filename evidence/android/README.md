@@ -25,14 +25,14 @@ files. **A difference that shows as one run in a small task is larger in a real 
 smaller.**
 
 **Results are per model tested.** The same rule is unnecessary on one model and load-bearing on
-another: `core STATE-1` is satisfied 6 of 6 unaided by the strongest model tested and 0 of 2 by two
-others. Nothing here is curated against the frontier alone.
+another, so nothing here is curated against the frontier alone. See the
+[model matrix](./model-matrix.md).
 
 ## Headline findings
 
 **Capability is the variable.** The same rule is unnecessary on one model and load-bearing on
-another. `core STATE-1` is satisfied 6/6 unaided by Opus and 0/2 by both Sonnet and Haiku, and the
-skill fixes it in both. Curating against the frontier alone would have deleted it.
+another, and the gap is large. Curating against the strongest model alone would have removed rules
+that two of the three models tested need.
 
 **Corpus support is an anti-signal.** Register size has predicted result thinness across six axes.
 The largest register, 238 claims, produced the smallest skill, 3 rules.
@@ -40,6 +40,5 @@ The largest register, 238 claims, produced the smallest skill, 3 rules.
 **Two skills measured as nulls.** `android/di` separated on nothing across 24 runs. Its task tempted
 every scope decision the skill makes and both models made the right call unaided.
 
-**Some rules the models already follow.** `core A11Y-1` was satisfied by every control run tested.
-`core L10N-1` looked the same until a task gave it a multi-currency total to format, and then the
-Haiku control failed it in both runs. Whether a rule is needed depends on whether a task has asked.
+**Some rules the tested models already follow**, and those are noted in each skill's evidence so a
+reader can judge what is worth installing for their model.

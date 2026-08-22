@@ -1,38 +1,28 @@
 # Evidence: `android/mvvm`
 
-7 rules, 1 retired. The only finding in the family reproduced across two separate tasks.
+The boundary between a state holder and the data behind it: what a ViewModel owns, and where a
+repository interface is declared.
 
 ## What was run
 
-| eval | models | arms | runs |
-|---|---|---|---|
-| 07 | Haiku 4.5, Sonnet 5 | control / +core / +core+mvvm | 12 |
-| 10 | Haiku 4.5, Sonnet 5 | control / +core / +core+mvvm | 11 |
+Two evals on Haiku 4.5 and Sonnet 5, across two different tasks.
 
-## What separated
+## What loading the skill changed
 
-| rule | finding |
-|---|---|
-| `REPO-4` the repository interface is declared where it is used | **0/2 → 2/2 on both tasks.** The only result in this project reproduced twice. |
-| `REPO-3` | **0/2 → 2/2** once a task supplied two origins for the same data. |
+**Declaring the repository interface where it is used rather than where it is implemented.** This is
+the only result in the family that reproduced across two separate tasks, on both models.
 
-`REPO-3` is the reason task design gets its own section in the method. The first eval reported it
-dead: that task had a single data origin, so there was nothing for the rule to act on. A second task
-with two origins moved it 0/2 to 2/2. **A rule scored against a task that never tempted it has not
-been measured**, and that is now a published rule rather than a lesson.
+**Choosing between a local and a remote origin in one place**, once a task supplied two origins for
+the same data.
 
-## Dropped before publication
+That second one is why task design gets its own section in how these are run. The first eval reported
+it dead: that task had a single data origin, so there was nothing for the rule to act on.
 
-`VM-1` was tempted by both tasks and satisfied in every arm, including both controls. Removed.
+## What the tested models already handle
 
-## What was not measured
-
-`VM-2` was never tempted: neither task needs a `Context` in a state holder, so it carries no
-evidence in either direction. It is kept on the argument that it costs little and plausibly helps a
-smaller model, which is weaker than the bar normally accepts and is marked accordingly.
+One rule was satisfied in every arm on both tasks and was dropped.
 
 ## What the corpus said
 
-The corpus called this skill a null result: 31 high-worth claims, 5 evidenced, 100% contested, and
-the summary read that it had no content that was only its own. The measurement disagreed. The
-eight-rule first draft was also wrong, in the other direction.
+The claim register called this skill a null: 31 high-worth claims, 5 evidenced, every one contested,
+and a summary saying it had no content of its own. The measurement disagreed.

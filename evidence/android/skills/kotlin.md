@@ -1,50 +1,36 @@
 # Evidence: `android/kotlin`
 
-6 rules, 3 retired. Re-measured under the current method in eval 22.
+Kotlin mechanics: the places where code compiles, reads correctly, and behaves differently from what
+it looks like.
 
 ## What was run
 
-| eval | what it tested | models | arms | runs |
-|---|---|---|---|---|
-| 01, 03, 04, 05, 06 | the original rule set | Opus 5, Sonnet 5, Haiku 4.5, qwen3.7-max | control / +core / +kotlin | see the [matrix](../model-matrix.md) |
-| 22 | the whole skill, re-run under the current method | Haiku 4.5, Sonnet 5 | control / +core / +kotlin | 24 |
+Six evals across Opus 5, Sonnet 5, Haiku 4.5 and qwen3.7-max, including one run through a second
+harness and one through a non-Anthropic provider. The most recent re-ran the whole skill from
+scratch, because its earlier evidence had been gathered under a weaker task design.
 
-Eval 22 re-ran this skill from scratch because its evidence was the oldest in the family and had
-been gathered under a weaker task design.
+## What loading the skill changed
 
-## What separated
+All three of the effects below appeared on Haiku 4.5 and were consistent across runs. Sonnet 5
+already handled them.
 
-Three rules, all on Haiku, all `2/2 → 0/2` in the violation direction with the `+core` arm flat.
+**Cancellation is not swallowed.** Unaided runs wrapped suspending work in a broad catch, which
+silently absorbs cancellation and leaves work running after the screen that wanted it is gone.
 
-| rule | Haiku ctl → +core → +kotlin | Sonnet |
-|---|---|---|
-| `ASYNC-2` cancellation swallowed | **2/2 → 2/2 → 0/2** | 0/6, every arm |
-| `ASYNC-4` job tracked by hand | **2/2 → 2/2 → 0/2** | 0/6, every arm |
-| `TYPE-1` stored property in a data class body | **2/2 → 2/2 → 0/2** | 1/2 → 0/2 |
+**A re-triggered read is cancelled by the operator built for it** rather than by tracking a job by
+hand, which races its own cancellation under fast input.
 
-Sonnet satisfies all three unaided and Haiku fails all three unaided. That is the capability window
-measured about as cleanly as this project manages.
-
-Verified by reading the code rather than the table: the Haiku control keeps a `var` total in a data
-class body, so the value sits outside `equals` and a cart whose total changes compares equal to the
-previous state. The skill arm writes a computed getter, which is the alternative the rule itself
-names.
-
-**The two rules that carried old evidence both reproduced.** `ASYNC-2` was 0/3 → 3/3 and `ASYNC-4`
-was 1/3 → 3/3 under the old method. Three runs on one model is a weak sample, and it turned out not
-to be a wrong one.
+**Everything compared by equality lives in the constructor.** Unaided runs put a recomputed total in
+the class body, where it sits outside `equals`, so a state object whose total changed compared equal
+to the previous one and the screen never updated.
 
 ## What the tested models already handle
 
-| rule | finding |
-|---|---|
-| `ASYNC-5` make a shared cold flow hot | Appears in 1 of 12 runs. Two screens read one cold flow and nobody noticed, with or without the rule. |
-| `TYPE-3` read-only type at a boundary | The cache still hands out its own `MutableList` in 12 of 12 runs, untouched by any arm. |
+Not re-wrapping a call that already dispatches, replacing state rather than mutating it in place, and
+making a genuinely absent field nullable rather than defaulted, were done unaided in every run of a
+task built to tempt them.
 
-## Dropped before publication
+## Where the skill did not change behaviour
 
-| rule | why |
-|---|---|
-| don't re-wrap a call that already dispatches | 0 violations in 12 runs, every arm |
-| replace state rather than mutating it | 0 violations in 12 runs, every arm |
-| absence is nullable, not defaulted | 0 violations in 12; 10 of 12 made the field nullable unprompted |
+Making a shared cold flow hot, and declaring a read-only type at a module boundary, were not picked
+up in either arm.

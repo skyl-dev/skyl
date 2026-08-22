@@ -29,8 +29,7 @@ many files, so **a difference measured here is a floor rather than a ceiling.**
 ## Results are per model, and the spread is wide
 
 Skills here are written for whatever model a project uses. Four model families have been run against
-them, and the same rule can be unnecessary on one and load-bearing on another: `core STATE-1` is
-satisfied 6 of 6 unaided by the strongest model tested and 0 of 2 by two others.
+them, and the same rule can be unnecessary on one and load-bearing on another.
 
 So a rule recorded as `satisfied-unaided` is a statement about the models tested, not about models in
 general. A weaker or differently-trained model may need exactly the rule a frontier model does not,
@@ -54,7 +53,7 @@ moves two variables at once and measures neither.
 
 **Rules were dropped when the measurement said the model already did it**, which is what keeps the
 installed set small. The most-repeated advice in the permissions corpus, ask for a permission in
-context rather than at launch, was satisfied in 12 of 12 control runs, so it is not here taking up
+context rather than at launch, was satisfied by every unaided run, so it is not here taking up
 context.
 
 **Corpus support turned out to be an anti-signal.** The more repositories document a practice, the

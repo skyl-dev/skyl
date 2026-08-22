@@ -1,64 +1,41 @@
 # Evidence: `android/db`
 
-15 rules. One measured, one rewritten after failing to land, one shrunk to a pointer after a seam
-eval. The rest are unmeasured.
+Persistence: what is stored, what survives, what is stale, and what happens to local work that has
+not reached the server.
 
 ## What was run
 
-| eval | what it tested | models | arms | runs |
-|---|---|---|---|---|
-| 08 | two screens over one cache | Haiku 4.5, Sonnet 5 | control / +core / +core+db | 12 |
-| 09 | the skill against `core` alone | Haiku 4.5, Sonnet 5 | control / +core / +core+db | 4 |
-| 10 | notes that sync | Haiku 4.5, Sonnet 5 | control / +core / +core+db | 11 |
-| 20 | the seam with `security` | Haiku 4.5, Sonnet 5 | control / +db / +security / both | 32 |
+Four evals on Haiku 4.5 and Sonnet 5. One is partial: it was stopped part-way and is marked as such
+below.
 
-## What separated
+## What loading the skill changed
 
-`WRITE-1`, a multi-statement write is one transaction. Haiku wrote delete-then-insert with no
-transaction in **4 of 4** runs that used the pattern. Sonnet used a transaction in 3 of 3.
+**A write spanning more than one statement is one transaction.** Unaided Haiku runs wrote
+delete-then-insert with no transaction every time the pattern came up; Sonnet used one.
+
+**Where a secret goes.** This skill points at `android/security` rather than answering it, after a
+measurement showed that carrying the same hazard in two skills made the smaller model worse rather
+than better.
+
+## What the tested models already handle
+
+In a later eval, adding a column to a database documented as already shipped produced a version bump
+and a migration in every run including controls, and nobody enabled destructive fallback. Writing an
+edit locally first, marking it pending, and observing the store rather than polling were handled in
+nearly every run. The seed shipped a refresh that cleared the table before fetching, which empties
+the app if the fetch fails, and every arm replaced it.
+
+That eval was stopped part-way, so its remaining findings are inconclusive.
 
 ## What one task could not show
 
-One eval returned nothing, because its task **specified the behaviour most of these rules describe**:
-four rules had nothing to act on and the rest were told what to do by the prompt. It is recorded so
-the result is not read as a measurement of the skill. It is recorded because a null from a task that cannot tempt the rules is not evidence of
-absence, and reading it as one would have deleted a skill on no information.
+One eval returned nothing, because its task specified the behaviour most of these rules describe:
+several rules had nothing to act on and the rest were told what to do by the prompt. Recorded so the
+result is not read as a measurement of the skill.
 
 ## A rule rewritten after measurement
 
-`SYNC-2` first read *"resolved by a server-assigned version, never by device clocks"*. It failed to
-land in **every** treated run: all 10 runs that produced code used the device clock, because the
-task's API supplied no version and the rule named no alternative.
-
-**A prohibition with no actionable branch for the common case is not a rule a model can follow.** It
-was rewritten to state what to do when the server offers nothing.
-
-## What the seam eval changed
-
-`STORE-3` used to name the deprecated crypto wrapper and defer the alternative to `android/security`.
-Measured with four arms, `security` alone produced Keystore-backed encryption in **2/2** Haiku runs,
-and **`db` and `security` together produced 0/2**. The extra rule count displaced the rule that
-mattered, on the model least able to absorb it. Sonnet was unaffected.
-
-`STORE-3` is now a pointer. **Two skills carrying one hazard measurably degrades the smaller model**,
-which is the strongest argument in this project for the layering rule.
-
-## A later eval, partial
-
-16 of 24 runs before the eval was halted, so this is partial and recorded as such: task A complete on
-both models, task B on Haiku only.
-
-**Schema work was already right.** Adding a column to a database documented as already shipped
-produced a version bump and a migration in 10 runs of 10, controls included, and nobody enabled
-destructive fallback. Exporting the schema is weaker, at 3 of 10.
-
-**Offline editing was already right.** Writing locally first, marking the row pending, observing the
-store rather than polling, and keeping the main-thread guard were satisfied in 9 or 10 runs of 10.
-Scheduling durable work to send the edit later split by model: Sonnet did it, Haiku did not, in any
-arm.
-
-**The seed's own bug was fixed by every arm.** `refresh()` shipped as clear-then-fetch, which empties
-the app if the fetch fails. All six Haiku runs replaced it, controls included.
-
-**Remote deletion, staleness and forced refresh moved by one run each**, which is noise at this
-sample size, and the eval stopped before Sonnet could add anything.
+A conflict rule first read "resolved by a server-assigned version, never by device clocks". It did
+not land in any run: the task's API supplied no version and the rule named no alternative, so every
+run used the device clock. A prohibition with no actionable branch for the common case is not
+something a model can follow. It now states what to do when the server offers nothing.
