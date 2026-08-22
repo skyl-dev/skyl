@@ -31,6 +31,24 @@ gives the agent only the listed sections; everything else, `## Why`, `## Pitfall
 `## Provenance`, is for the human deciding whether to trust the skill. That split is what lets a
 skill carry its own evidence without spending the agent's context on it.
 
+## Versioning
+
+**Every skill starts at `1.0.0` when it is first published here.** Work before publication happened
+in a private workspace and its version numbers were internal bookkeeping, not a release history, so
+they are not carried over.
+
+After publication, semver applies to what an installer receives:
+
+| change | bump |
+|---|---|
+| a rule retired, added, or its instruction changed | minor |
+| wording, `Why`, `Pitfalls`, `Provenance`, references | patch |
+| a rule id renamed, or `requires` changed | major |
+
+Evidence is anchored to **evals**, not to versions, because the evals are published and the
+pre-publication versions were not. A `## Provenance` entry says *"eval 19 measured all four"*, never
+*"v1.3.0 added"*.
+
 `detect` keys are family-defined and resolved by the index. Current keys: `gradle_dependency`
 `gradle_plugin`, `file`, `manifest_element`, `manifest_attribute`.
 
