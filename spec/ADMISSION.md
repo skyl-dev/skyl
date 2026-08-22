@@ -91,6 +91,14 @@ A rule in this registry carries one of five statuses in the [rule ledger](../evi
 | `retired` | removed |
 | `null` | the whole skill was measured and nothing separated |
 
+**Every status is relative to the models tested.** This registry is written for whatever model a
+project uses, and four model families have been run against it. `satisfied-unaided` means the models
+tested already did it; it is not a claim about models that have not been run. The capability window
+makes this concrete: `core STATE-1` is satisfied 6 of 6 unaided by the strongest model tested and 0
+of 2 by two others, and the qwen run moved four rules that Claude-family controls satisfied.
+
+A rule that one model does not need is exactly the rule another model does.
+
 **`satisfied-unaided` and `not-tempted` are different facts and used to be one word.** A rule the
 control satisfied on a task built to tempt it has been measured: the answer is that the model already
 does it. A rule no task has reached has not been measured at all. Collapsing them made a well-tested

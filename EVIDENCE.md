@@ -29,6 +29,16 @@ The middle arm exists because merely having a context file changes behaviour. Wi
 result is confounded by that, and a skill can appear to work when what worked was the presence of
 instructions.
 
+## Results are per model, and the spread is wide
+
+Skills here are written for whatever model a project uses. Four model families have been run against
+them, and the same rule can be unnecessary on one and load-bearing on another: `core STATE-1` is
+satisfied 6 of 6 unaided by the strongest model tested and 0 of 2 by two others.
+
+So a rule recorded as `satisfied-unaided` is a statement about the models tested, not about models in
+general. A weaker or differently-trained model may need exactly the rule a frontier model does not,
+which is why nothing here is curated against the frontier alone.
+
 ## Beyond one model and one harness
 
 A result that holds in one place is not portable. Three variables were moved deliberately.

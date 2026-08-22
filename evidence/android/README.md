@@ -15,6 +15,10 @@
 
 ## Reading the ledger
 
+**Statuses are per model tested.** Four model families have been run here. A rule the tested models
+already follow may still be the rule a different model needs, so `satisfied-unaided` is a result
+about them rather than a judgement about the rule.
+
 `not-tempted` does not mean untested. It means **no task has created that rule's situation**, so
 nothing is known either way. `satisfied-unaided` means a task did create it and the control already
 got it right, which is a measurement with a negative answer.
