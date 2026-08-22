@@ -5,7 +5,10 @@ the layout and resource decisions that break at runtime rather than at compile t
 
 ## What was run
 
-One eval on Haiku 4.5 and Sonnet 5, control against `+core` against `+core+xml`.
+**1 eval, 36 recorded runs**, on Haiku 4.5 and Sonnet 5. Every run is archived: the generated
+sources, the prompt each arm received, and the model each one reported.
+
+Control against `+core` against `+core+xml`.
 
 ## What loading the skill changed
 

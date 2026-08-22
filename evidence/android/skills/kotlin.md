@@ -5,9 +5,12 @@ it looks like.
 
 ## What was run
 
-Six evals across Opus 5, Sonnet 5, Haiku 4.5 and qwen3.7-max, including one run through a second
-harness and one through a non-Anthropic provider. The most recent re-ran the whole skill from
-scratch, because its earlier evidence had been gathered under a weaker task design.
+**6 evals, 60 recorded runs**, on Opus 5, Sonnet 5, Haiku 4.5 and qwen3.7-max, through two
+harnesses and two providers. Every run is archived: the generated sources, the prompt each arm
+received, and the model each one reported.
+
+The most recent re-ran the whole skill from scratch, because its earlier evidence had been gathered
+under a weaker task design.
 
 ## What loading the skill changed
 

@@ -5,8 +5,11 @@ than once per frame, in any order, and be skipped entirely.
 
 ## What was run
 
-One eval on Haiku 4.5 and Sonnet 5 covering the interop rules. The remaining rules carry evidence
-from earlier work under a weaker task design and have not been re-run.
+**1 eval, 24 recorded runs**, on Haiku 4.5 and Sonnet 5. Every run is archived: the generated
+sources, the prompt each arm received, and the model each one reported.
+
+Covering the interop rules. The remaining rules carry evidence from earlier work under a weaker task
+design and have not been re-run.
 
 ## What the tested models already handle
 

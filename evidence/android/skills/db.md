@@ -5,8 +5,10 @@ not reached the server.
 
 ## What was run
 
-Four evals on Haiku 4.5 and Sonnet 5. One is partial: it was stopped part-way and is marked as such
-below.
+**5 evals, 94 recorded runs**, on Haiku 4.5 and Sonnet 5. Every run is archived: the generated
+sources, the prompt each arm received, and the model each one reported.
+
+One of them is partial: it was stopped part-way and is marked as such below.
 
 ## What loading the skill changed
 

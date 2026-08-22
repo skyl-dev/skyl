@@ -5,7 +5,10 @@ repository interface is declared.
 
 ## What was run
 
-Two evals on Haiku 4.5 and Sonnet 5, across two different tasks.
+**2 evals, 30 recorded runs**, on Haiku 4.5 and Sonnet 5. Every run is archived: the generated
+sources, the prompt each arm received, and the model each one reported.
+
+Two different tasks.
 
 ## What loading the skill changed
 

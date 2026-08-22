@@ -4,8 +4,10 @@ Images that arrive at runtime: fetched from a URL, picked by the user, or decode
 
 ## What was run
 
-One eval on Haiku 4.5 and Sonnet 5, two brownfield tasks, control against `+core` against
-`+core+images`.
+**1 eval, 24 recorded runs**, on Haiku 4.5 and Sonnet 5. Every run is archived: the generated
+sources, the prompt each arm received, and the model each one reported.
+
+Two brownfield tasks, control against `+core` against `+core+images`.
 
 ## What loading the skill changed
 

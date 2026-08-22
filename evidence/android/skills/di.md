@@ -5,7 +5,10 @@ discovered.
 
 ## What was run
 
-One eval on Haiku 4.5 and Sonnet 5, two seeded tasks, control against `+core` against `+core+di`.
+**1 eval, 48 recorded runs**, on Haiku 4.5 and Sonnet 5. Every run is archived: the generated
+sources, the prompt each arm received, and the model each one reported.
+
+Two seeded tasks, control against `+core` against `+core+di`.
 
 ## What the measurement showed
 

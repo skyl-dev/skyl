@@ -5,7 +5,10 @@ request is authorised.
 
 ## What was run
 
-One eval on Haiku 4.5 and Sonnet 5, two tasks, control against `+core` against `+core+networking`.
+**1 eval, 36 recorded runs**, on Haiku 4.5 and Sonnet 5. Every run is archived: the generated
+sources, the prompt each arm received, and the model each one reported.
+
+Two tasks, control against `+core` against `+core+networking`.
 
 ## What loading the skill changed
 

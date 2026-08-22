@@ -4,8 +4,10 @@ Keeping a secret on a device you do not control, and the surfaces where data lea
 
 ## What was run
 
-Two evals on Haiku 4.5 and Sonnet 5, one of them testing what happens when this skill and
-`android/db` are loaded together.
+**2 evals, 56 recorded runs**, on Haiku 4.5 and Sonnet 5. Every run is archived: the generated
+sources, the prompt each arm received, and the model each one reported.
+
+One of them tests what happens when this skill and `android/db` are loaded together.
 
 ## Where a secret actually goes
 

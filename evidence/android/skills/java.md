@@ -5,7 +5,10 @@ depend on, and converting old code without changing what it does.
 
 ## What was run
 
-Two evals on Haiku 4.5 and Sonnet 5, control against `+core` against `+core+java`.
+**2 evals, 38 recorded runs**, on Haiku 4.5 and Sonnet 5. Every run is archived: the generated
+sources, the prompt each arm received, and the model each one reported.
+
+Control against `+core` against `+core+java`.
 
 ## What loading the skill changed
 

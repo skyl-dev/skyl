@@ -4,8 +4,11 @@ Runtime permissions: whether to take one at all, how to ask, and what the app do
 
 ## What was run
 
-Two evals on Haiku 4.5 and Sonnet 5. The second re-ran the skill arm after two rules were rewritten,
-with the expected result written down beforehand.
+**2 evals, 32 recorded runs**, on Haiku 4.5 and Sonnet 5. Every run is archived: the generated
+sources, the prompt each arm received, and the model each one reported.
+
+The second re-ran the skill arm after two rules were rewritten, with the expected result written down
+beforehand.
 
 ## What loading the skill changed
 

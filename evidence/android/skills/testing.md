@@ -4,7 +4,10 @@ What makes a test able to fail for the right reason.
 
 ## What was run
 
-One eval on Haiku 4.5 and Sonnet 5, two tasks, control against `+core` against `+core+testing`.
+**1 eval, 24 recorded runs**, on Haiku 4.5 and Sonnet 5. Every run is archived: the generated
+sources, the prompt each arm received, and the model each one reported.
+
+Two tasks, control against `+core` against `+core+testing`.
 
 ## What loading the skill changed
 

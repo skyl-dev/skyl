@@ -3,8 +3,8 @@
 | | |
 |---|---|
 | skills | 13 |
-| evals | 24, plus two voided |
-| recorded runs | 575 |
+| evals | 26 |
+| recorded runs | 490 |
 | models | Opus 5 · Sonnet 5 · Haiku 4.5 · qwen3.7-max |
 | harnesses | `claude` CLI · `opencode` 1.17.11 |
 | providers | Anthropic direct · OpenRouter |

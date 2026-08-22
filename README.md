@@ -22,7 +22,7 @@ Every rule here was **measured before it shipped** and rules that failed to meas
 | skills | **13** (`android`) |
 | rules | **146** |
 | rules **retired** because a model already did it unprompted | **17** |
-| recorded runs | **519** across 21 evals |
+| recorded runs | **490** across 26 evals |
 | models | Opus 5 · Sonnet 5 · Haiku 4.5 · qwen3.7-max |
 | harnesses | `claude` CLI · `opencode` |
 | providers | Anthropic · OpenRouter |

@@ -5,9 +5,11 @@ survives process death, what the UI is allowed to claim, and what leaves the app
 
 ## What was run
 
-Four evals, on Opus 5, Sonnet 5, Haiku 4.5 and qwen3.7-max, through two harnesses and two providers.
-Control arms had no skill loaded; treated arms had `core`. See the
-[model matrix](../model-matrix.md).
+**7 evals, 68 recorded runs**, on Opus 5, Sonnet 5, Haiku 4.5 and qwen3.7-max, through two
+harnesses and two providers. Every run is archived: the generated sources, the prompt each arm
+received, and the model each one reported.
+
+Control arms had no skill loaded; treated arms had `core`. See the [model matrix](../model-matrix.md).
 
 ## What loading the skill changed
 
