@@ -27,9 +27,8 @@ The models arbitrated between two rules in this file and got it right. The file 
 one wins. `LEAK-2` now carries the conversion exception and `CONVERT-1` states that it outranks the
 structural rules during a conversion.
 
-**The detector had scored a right answer as a miss.** That is the failure mode this project has hit
-thirteen times, and it is why scoring code is now run against the unmodified seed first and its
-fixtures include near-misses.
+The first reading of that result was wrong: what looked like a rule failing was two rules being
+ordered correctly.
 
 ## Satisfied unaided
 

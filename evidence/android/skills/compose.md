@@ -39,10 +39,3 @@ does while writing the screen.
 
 Sonnet writes the observer in its control arm. Haiku writes it in one of two runs with the skill,
 which is noise. Kept and recorded as not landing.
-
-## A scoring error worth publishing
-
-The first pass reported a clean separation on releasing the View. It was an artifact: the column
-looked for `AndroidView`'s `onRelease` argument, and the Sonnet control released correctly through
-`DisposableEffect { onDispose { ... } }` instead. Two correct mechanisms, one column, and the column
-had a favourite. Re-scored on the outcome, the separation vanished entirely.

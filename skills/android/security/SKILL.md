@@ -231,7 +231,7 @@ share sheet, in every arm. The skill did not turn a legitimate implicit intent i
 platform throws from API 31 unless a flag is chosen, it cannot be got wrong. `IPC-2` now states only
 the combination the platform does not check.
 
-**Unmeasured:** `KEY-1` and `KEY-2` were never tempted, since every run took the library path;
+**Not reached by either task:** `KEY-1` and `KEY-2` were never tempted, since every run took the library path;
 `IPC-3` and `TRUST-1` were reached by neither task; and `FLAG_MUTABLE` appears in 0 of 12 task-B runs, so
 the mutable-plus-implicit case `IPC-2` now describes has not been tested.
 

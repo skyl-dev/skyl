@@ -119,9 +119,5 @@ corpus-saturated before the run and every one was.
 `SEAM-1`, stated as a separate instance under a different heading. It is now folded in rather than
 kept, which is the actionable form of the finding.
 
-`SCHED-1` and `KNOW-1` are **unmeasured**: `setMain` was noisy on Haiku and already universal on
+`SCHED-1` and `KNOW-1` were **not reached by either task**: `setMain` was noisy on Haiku and already universal on
 Sonnet, and neither task tempted an assertion on mechanism.
-
-**Eleventh detector error.** The visibility column read `Y` in all 12 runs including controls
-because its regex matched a field that is `private` *in the unmodified seed*. Running the detector
-against the seed itself is now the first check in `method/METHOD.md`.

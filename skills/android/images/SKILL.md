@@ -176,7 +176,7 @@ written correctly by the Haiku *control* complete with all four rotation and fli
 only as a pitfall.
 
 **Kept but model-dependent:** `CACHE-2` is 2/2 in Sonnet's control and 0/6 on Haiku *including with
-the skill loaded*. **Kept but unmeasured:** the persistable half of `USER-2` was never tempted
+the skill loaded*. **Not reached by either task:** the persistable half of `USER-2` was never tempted
 because every run uploaded immediately.
 
 **Removed:** `TEST-1` (a test that renders an image does not fetch one) was a subset of

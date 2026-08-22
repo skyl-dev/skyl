@@ -247,11 +247,5 @@ unprompted, it is specifically the resume/pause pair, the one that only fails af
 been backgrounded, that Haiku misses. Kept and recorded as *does not land* which is a different
 finding from the model already doing it. See `evals/android/eval-18-compose-interop/RESULTS.md`.
 
-**A detector error worth carrying here.** The first scoring pass reported a clean separation on
-releasing the View. It was an artifact: the column looked for `AndroidView`'s `onRelease` argument
-and the Sonnet control released correctly through `DisposableEffect { onDispose { ... } }` instead.
-Re-scored on the outcome, the separation vanished. The rule this produced, a detector asks for the
-outcome, never the mechanism, is in `method/METHOD.md`.
-
 ** Rules `EFFECT-*` through `THEME-1` predate this session's eval record** and carry the evidence
 described in the project's earlier eval files rather than a per-rule score here.
