@@ -13,7 +13,7 @@ falsifying it is the single most valuable contribution you can make.
 If you can show a **control run** no skill loaded, where the model already does what a rule says
 that rule is a candidate for retirement. Open a
 [challenge](../../issues/new?template=challenge-a-rule.yml) with the task, the model, and the
-output. Eighteen rules have been removed exactly this way.
+output. 17 rules have been removed exactly this way.
 
 This matters more over time, not less: as models improve, rules expire. A registry nobody can
 falsify becomes wrong quietly.

@@ -12,7 +12,7 @@ only if the model got it wrong.
 | models | Opus 5 · Sonnet 5 · Haiku 4.5 · qwen3.7-max |
 | harnesses | `claude` CLI · `opencode` 1.17.11 |
 | providers | Anthropic direct · OpenRouter |
-| rules retired on measurement | **18** |
+| rules retired on measurement | **17** |
 
 Per skill: [`evidence/`](./evidence). Across skills: the [rule ledger](./evidence/rules.md).
 Method: [`spec/METHOD.md`](./spec/METHOD.md).
@@ -45,7 +45,7 @@ moves two variables at once and measures neither.
 
 ## What the measurements changed
 
-**18 rules were removed** because a control arm already did the thing. Some were rules we were
+**17 rules were removed** because a control arm already did the thing. Some were rules we were
 confident about. The most-repeated advice in the entire permissions corpus, ask for a permission in
 context rather than at launch, was satisfied in 12 of 12 control runs and deleted.
 

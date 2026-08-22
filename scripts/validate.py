@@ -61,7 +61,12 @@ for f in sorted(root.rglob('SKILL.md')):
     if retired:
         gone = [x.strip() for x in retired.group(1).split(',') if x.strip()]
         for rid in gone:
-            base = rid.split('-')[0] + '-' + (re.search(r'-(\d+)', rid).group(1) if re.search(r'-(\d+)', rid) else '')
+            # A retired entry must be a real rule id. A descriptive label such as
+            # `ASK-3-ask-in-context` hides the fact that `ASK-3` itself was reused.
+            if not re.fullmatch(r'[A-Z0-9]+-\d+', rid):
+                err(f'retired entry `{rid}` is not a rule id. '
+                    f'Use the bare id, so reuse of it is detectable.')
+                continue
             if rid in ids:
                 err(f'retired id `{rid}` is in use again, ids are never reused')
 

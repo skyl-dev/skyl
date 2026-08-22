@@ -10,7 +10,7 @@ context and displaces one that would have worked.
 This is decided by running the task with **no skill loaded** and reading what comes out. Not by
 judgement, and not by how important the rule feels.
 
-Eighteen rules have been retired against this test. Some were rules we were confident about, the
+17 rules have been retired against this test. Some were rules we were confident about, the
 in-context permission-timing rule is the most-repeated advice in the entire permissions corpus, and
 zero of twelve control runs got it wrong.
 

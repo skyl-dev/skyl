@@ -4,9 +4,9 @@
     "android"
   ],
   "counts": {
-    "skills": 9,
-    "rules": 120,
-    "retired": 9
+    "skills": 13,
+    "rules": 146,
+    "retired": 17
   },
   "skills": [
     {
@@ -189,6 +189,44 @@
       "installed_words": 1089
     },
     {
+      "name": "android/images",
+      "axis": "topic",
+      "family": "android",
+      "version": "1.0.0",
+      "requires": [
+        "android/core"
+      ],
+      "detect": {
+        "gradle_dependency": [
+          "io.coil-kt.coil3:coil-compose",
+          "io.coil-kt:coil-compose",
+          "io.coil-kt:coil",
+          "com.github.bumptech.glide:glide",
+          "com.squareup.picasso:picasso"
+        ]
+      },
+      "path": "skills/android/images",
+      "rules": {
+        "total": 6,
+        "must": 5,
+        "should": 1,
+        "ids": [
+          "LOAD-1",
+          "LOAD-2",
+          "MEM-1",
+          "CACHE-1",
+          "CACHE-2",
+          "USER-2"
+        ]
+      },
+      "retired": [
+        "MEM-2",
+        "USER-1",
+        "TEST-1"
+      ],
+      "installed_words": 960
+    },
+    {
       "name": "android/java",
       "axis": "language",
       "family": "android",
@@ -343,6 +381,116 @@
       },
       "retired": [],
       "installed_words": 1321
+    },
+    {
+      "name": "android/permissions",
+      "axis": "topic",
+      "family": "android",
+      "version": "1.0.0",
+      "requires": [
+        "android/core"
+      ],
+      "detect": {
+        "manifest_element": [
+          "uses-permission"
+        ]
+      },
+      "path": "skills/android/permissions",
+      "rules": {
+        "total": 8,
+        "must": 7,
+        "should": 1,
+        "ids": [
+          "ASK-1",
+          "ASK-2",
+          "LEAST-1",
+          "ASK-4",
+          "GRANT-1",
+          "GRANT-2",
+          "GRANT-3",
+          "DECL-1"
+        ]
+      },
+      "retired": [
+        "ASK-3"
+      ],
+      "installed_words": 1206
+    },
+    {
+      "name": "android/security",
+      "axis": "topic",
+      "family": "android",
+      "version": "1.0.0",
+      "requires": [
+        "android/core"
+      ],
+      "detect": {
+        "gradle_dependency": [
+          "androidx.security:security-crypto",
+          "androidx.biometric:biometric",
+          "com.google.android.play:integrity",
+          "net.zetetic:sqlcipher-android"
+        ],
+        "manifest_attribute": [
+          "android:allowBackup",
+          "android:dataExtractionRules"
+        ]
+      },
+      "path": "skills/android/security",
+      "rules": {
+        "total": 9,
+        "must": 9,
+        "should": 0,
+        "ids": [
+          "STORE-1",
+          "KEY-1",
+          "KEY-2",
+          "OUT-1",
+          "OUT-2",
+          "IPC-1",
+          "IPC-2",
+          "IPC-3",
+          "TRUST-1"
+        ]
+      },
+      "retired": [],
+      "installed_words": 1270
+    },
+    {
+      "name": "android/testing",
+      "axis": "topic",
+      "family": "android",
+      "version": "1.0.0",
+      "requires": [
+        "android/core"
+      ],
+      "detect": {
+        "gradle_dependency": [
+          "org.jetbrains.kotlinx:kotlinx-coroutines-test",
+          "app.cash.turbine:turbine",
+          "org.robolectric:robolectric",
+          "androidx.compose.ui:ui-test-junit4",
+          "androidx.test.espresso:espresso-core"
+        ]
+      },
+      "path": "skills/android/testing",
+      "rules": {
+        "total": 3,
+        "must": 2,
+        "should": 1,
+        "ids": [
+          "SEAM-1",
+          "SCHED-1",
+          "KNOW-1"
+        ]
+      },
+      "retired": [
+        "REACH-1",
+        "TIME-1",
+        "STATE-1",
+        "STREAM-1"
+      ],
+      "installed_words": 548
     },
     {
       "name": "android/xml",
