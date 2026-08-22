@@ -1,0 +1,141 @@
+{
+  "version": 1,
+  "families": [
+    "android"
+  ],
+  "counts": {
+    "skills": 3,
+    "rules": 44,
+    "retired": 5
+  },
+  "skills": [
+    {
+      "name": "android/core",
+      "axis": "core",
+      "family": "android",
+      "version": "1.0.0",
+      "requires": [],
+      "detect": {
+        "file": [
+          "**/src/main/AndroidManifest.xml"
+        ],
+        "gradle_plugin": [
+          "com.android.application",
+          "com.android.library"
+        ]
+      },
+      "path": "skills/android/core",
+      "rules": {
+        "total": 22,
+        "must": 18,
+        "should": 4,
+        "ids": [
+          "BOUND-1",
+          "BOUND-2",
+          "BOUND-3",
+          "STATE-1",
+          "STATE-2",
+          "STATE-3",
+          "STATE-4",
+          "DATA-1",
+          "DATA-2",
+          "DATA-3",
+          "DATA-4",
+          "WORK-1",
+          "WORK-2",
+          "WORK-3",
+          "SEC-1",
+          "SEC-2",
+          "SEC-3",
+          "BUILD-3",
+          "L10N-1",
+          "L10N-2",
+          "A11Y-1",
+          "A11Y-2"
+        ]
+      },
+      "retired": [
+        "BUILD-1",
+        "BUILD-2"
+      ],
+      "installed_words": 1965
+    },
+    {
+      "name": "android/java",
+      "axis": "language",
+      "family": "android",
+      "version": "1.0.0",
+      "requires": [
+        "android/core"
+      ],
+      "detect": {
+        "file": [
+          "**/src/main/java/**/*.java"
+        ]
+      },
+      "path": "skills/android/java",
+      "rules": {
+        "total": 16,
+        "must": 14,
+        "should": 2,
+        "ids": [
+          "NULL-1",
+          "NULL-2",
+          "INTEROP-1",
+          "INTEROP-2",
+          "LEAK-1",
+          "LEAK-2",
+          "LEAK-3",
+          "ASYNC-1",
+          "ASYNC-2",
+          "ASYNC-4",
+          "ASYNC-5",
+          "CONVERT-1",
+          "CONVERT-2",
+          "CONVERT-3",
+          "CONVERT-4",
+          "CONVERT-5"
+        ]
+      },
+      "retired": [],
+      "installed_words": 1611
+    },
+    {
+      "name": "android/kotlin",
+      "axis": "language",
+      "family": "android",
+      "version": "1.0.0",
+      "requires": [
+        "android/core"
+      ],
+      "detect": {
+        "file": [
+          "**/*.kt"
+        ],
+        "gradle_plugin": [
+          "org.jetbrains.kotlin.android"
+        ]
+      },
+      "path": "skills/android/kotlin",
+      "rules": {
+        "total": 6,
+        "must": 4,
+        "should": 2,
+        "ids": [
+          "ASYNC-2",
+          "ASYNC-3",
+          "ASYNC-4",
+          "ASYNC-5",
+          "TYPE-1",
+          "TYPE-3"
+        ]
+      },
+      "retired": [
+        "ASYNC-1",
+        "TYPE-2",
+        "SER-1"
+      ],
+      "installed_words": 716
+    }
+  ]
+}
