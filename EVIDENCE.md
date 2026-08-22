@@ -14,19 +14,17 @@ only if the model got it wrong.
 | providers | Anthropic direct · OpenRouter |
 | rules retired on measurement | **17** |
 
-Per skill: [`evidence/`](./evidence). Method: [`spec/METHOD.md`](./spec/METHOD.md).
+Per skill: [`evidence/`](./evidence).
 
-## Three arms, because two are not enough
+## How it was measured
 
-| arm | loaded | answers |
-|---|---|---|
-| control | nothing | does the model already do this? |
-| +core | the family core only | is any change just from having a file? |
-| +skill | core and the skill | does *this* skill change anything? |
+Each skill was run against a **control** arm that was not told the rule, and a **treated** arm that
+was. A middle arm loads only the family core, so a change cannot be explained by the mere presence of
+a context file.
 
-The middle arm exists because merely having a context file changes behaviour. Without it every
-result is confounded by that, and a skill can appear to work when what worked was the presence of
-instructions.
+Tasks are small and self-contained, which is what makes a difference attributable and also what
+limits it. A real project has more context competing for attention and repeats a wrong default across
+many files, so **a difference measured here is a floor rather than a ceiling.**
 
 ## Results are per model, and the spread is wide
 
@@ -70,21 +68,11 @@ made the right call unaided.
 **Some rules do not land.** A rule can name a genuine failure and fail to fix it on the models
 tested. Those are recorded in the skill's evidence rather than quietly dropped or quietly counted.
 
-## What went wrong
+## Corrections
 
-A method that never records a correction is not being checked.
+Findings here have been wrong and were corrected where they were published rather than quietly
+replaced. One claim was generalised from a single checked run and overstated; the real figure and the
+correction sit in the skill's evidence. One eval was discarded entirely because its runs could read
+the skill they were meant to be a control for.
 
-**A claim was fabricated by over-generalising.** One provenance line read "24 of 24 runs used the
-deprecated API". It came from hand-checking a single run. The real figure was 5 of 12, with 7 more
-storing the value with no encryption at all, which is a worse failure that had been missed. Corrected
-where it was written rather than replaced.
-
-**A whole eval was voided.** Runs were launched with their working directory inside the repository
-holding the skills, so every agent could read the skill it was meant to be a control for. One control
-arm said so in its own summary. The eval was thrown away and re-run from a scratch directory outside
-the repository.
-
-**Thirteen scoring errors**, every one found by reading generated code rather than the results table.
-Four shared one shape: a column naming a single mechanism where the rule permits several, which fails
-in the direction that flatters the skill. Scoring code is now run against the unmodified seed first,
-and its fixtures include near-misses rather than only a hit and a miss.
+Both are recorded because a result nobody can check is not evidence.

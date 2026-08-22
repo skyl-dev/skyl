@@ -74,6 +74,6 @@ of what it had not: what it found is above.
 
 ## Method
 
-Arms, task design, void conditions and the detector discipline are in [spec/METHOD.md](../../../spec/METHOD.md).
-The short version: a control arm answers whether the model already does it, a `+core` arm answers
-whether any change is just from having a file, and a rule that the control satisfies is removed.
+A control arm answers whether the model already does it. A `+core` arm answers whether any change is
+just from having a context file at all. The third arm adds the skill. Every figure above is the
+count of runs in a cell that satisfied the check.

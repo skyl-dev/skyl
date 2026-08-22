@@ -45,7 +45,7 @@ Four tests, in order. A rule ships only if it passes all four:
 4. **Is it checkable at every token, or a deferred action?** Deferred actions are not rules.
 
 Then it is written, drafted against a corpus, checked against primary sources, and put in front of a
-control arm. Full method in [spec/METHOD.md](./spec/METHOD.md).
+control arm that was not told the rule. What that produced is in [EVIDENCE.md](./EVIDENCE.md).
 
 **A finding that shapes everything here:** corpus support is an *anti-signal*. The more repositories
 that document a practice, the more likely a model already follows it, because the corpus and the
