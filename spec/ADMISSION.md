@@ -86,12 +86,20 @@ A rule in this registry carries one of five statuses in the [rule ledger](../evi
 |---|---|
 | `measured` | separated in a control/treatment comparison |
 | `retired` | removed, a control arm did it unprompted |
-| `candidate` | a control arm satisfied it and **it is still shipping**. A retirement not yet actioned. |
+| `candidate` | a control arm satisfied it and **it is still shipping**. A retirement proposed, not applied. |
 | `not-landing` | the model gets it wrong **and** the rule does not fix it. Kept, and said so. |
 | `unmeasured` | no task reached it |
 | `null` | the whole skill was measured and nothing separated |
 
 `not-landing`, `candidate` and `null` are published deliberately.
+
+**A published rule is not retired on one task's evidence.** `core L10N-1` sat at `candidate` after
+several evals whose controls all satisfied it. A task that finally gave it a multi-currency total to
+format showed the control hardcoding the currency symbol and the exponent, and it moved to
+`measured`. What had looked like a rule the models absorbed was a rule nothing had asked about.
+
+So a retirement needs two independent tasks that both tempt the rule, and `candidate` is where a rule
+waits in the meantime, in public, with the measurement attached.
 
 `candidate` is the uncomfortable one and that is the point: it is a rule our own bar says should be
 removed, still present, in public, with the measurement attached. A registry that only reports its
