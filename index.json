@@ -4,11 +4,56 @@
     "android"
   ],
   "counts": {
-    "skills": 3,
-    "rules": 44,
-    "retired": 5
+    "skills": 5,
+    "rules": 72,
+    "retired": 8
   },
   "skills": [
+    {
+      "name": "android/compose",
+      "axis": "framework",
+      "family": "android",
+      "version": "1.0.0",
+      "requires": [
+        "android/core"
+      ],
+      "detect": {
+        "gradle_dependency": [
+          "androidx.compose.ui:ui",
+          "androidx.compose.runtime:runtime"
+        ],
+        "gradle_plugin": [
+          "org.jetbrains.kotlin.plugin.compose"
+        ]
+      },
+      "path": "skills/android/compose",
+      "rules": {
+        "total": 14,
+        "must": 10,
+        "should": 4,
+        "ids": [
+          "EFFECT-1",
+          "EFFECT-2",
+          "EFFECT-3",
+          "EFFECT-4",
+          "REM-1",
+          "REM-2",
+          "SKIP-1",
+          "SKIP-2",
+          "SKIP-3",
+          "LAZY-1",
+          "TEXT-1",
+          "MOD-1",
+          "THEME-1",
+          "INTEROP-2"
+        ]
+      },
+      "retired": [
+        "INTEROP-1",
+        "INTEROP-3"
+      ],
+      "installed_words": 1200
+    },
     {
       "name": "android/core",
       "axis": "core",
@@ -136,6 +181,54 @@
         "SER-1"
       ],
       "installed_words": 716
+    },
+    {
+      "name": "android/xml",
+      "axis": "framework",
+      "family": "android",
+      "version": "1.0.0",
+      "requires": [
+        "android/core"
+      ],
+      "detect": {
+        "file": [
+          "**/src/main/res/layout/*.xml"
+        ],
+        "gradle_property": [
+          "android.buildFeatures.viewBinding",
+          "android.buildFeatures.dataBinding"
+        ],
+        "gradle_dependency": [
+          "androidx.recyclerview:recyclerview",
+          "com.google.android.material:material"
+        ]
+      },
+      "path": "skills/android/xml",
+      "rules": {
+        "total": 14,
+        "must": 10,
+        "should": 4,
+        "ids": [
+          "HOST-1",
+          "HOST-2",
+          "HOST-4",
+          "LIST-1",
+          "LIST-2",
+          "LIST-3",
+          "LIST-4",
+          "STATE-1",
+          "STATE-2",
+          "LAYOUT-1",
+          "LAYOUT-2",
+          "BIND-1",
+          "BIND-2",
+          "RES-1"
+        ]
+      },
+      "retired": [
+        "HOST-3"
+      ],
+      "installed_words": 1014
     }
   ]
 }
