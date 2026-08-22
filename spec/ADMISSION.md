@@ -86,9 +86,13 @@ A rule in this registry carries one of five statuses in the [rule ledger](../evi
 |---|---|
 | `measured` | separated in a control/treatment comparison |
 | `retired` | removed, a control arm did it unprompted |
+| `candidate` | a control arm satisfied it and **it is still shipping**. A retirement not yet actioned. |
 | `not-landing` | the model gets it wrong **and** the rule does not fix it. Kept, and said so. |
 | `unmeasured` | no task reached it |
 | `null` | the whole skill was measured and nothing separated |
 
-`not-landing` and `null` are published deliberately. A registry that only reports its wins is not
-reporting.
+`not-landing`, `candidate` and `null` are published deliberately.
+
+`candidate` is the uncomfortable one and that is the point: it is a rule our own bar says should be
+removed, still present, in public, with the measurement attached. A registry that only reports its
+wins is not reporting, and one that hides its own backlog is worse.

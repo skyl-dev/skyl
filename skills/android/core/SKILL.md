@@ -6,7 +6,7 @@ requires: []
 version: 1.0.0
 authors: [ahmmedrejowan]
 agent_sections: [rules]
-retired: [BUILD-1-shrinking, BUILD-2-api-implementation]
+retired: [BUILD-1, BUILD-2]
 detect:
  file: ["**/src/main/AndroidManifest.xml"]
  gradle_plugin: ["com.android.application", "com.android.library"]
@@ -166,7 +166,7 @@ exist; name yours.
 
 ### Build
 
-- **BUILD-1** `should`: Prefer KSP where the library ships a KSP processor, and never run KAPT
+- **BUILD-3** `should`: Prefer KSP where the library ships a KSP processor, and never run KAPT
  and KSP for the same library.
  *Why:* KAPT generates Java stubs for every Kotlin source before anything else runs, which is the
  slowest step in most Android builds. Running both processors for one library generates the same
@@ -301,7 +301,7 @@ every arm. `BUILD-2` (`api`/`implementation`) is **cut** as untestable and unevi
 column that reported violations was itself wrong, since a public `RoomDatabase` subclass in the
 module *is* the condition that makes `api` correct.
 
-What survives as `BUILD-1` is KSP over KAPT, and it survives on evidence that contradicts the
+What survives is `BUILD-3`, KSP over KAPT, and it survives on evidence that contradicts the
 pre-registered falsifier: **Haiku reaches for KAPT on Room in 4 runs of 4, in both arms.** A real
 model failure the rule does not fix, rather than a corpus artifact. The departure from the
 pre-registration is recorded in `evals/android/eval-19-core-v12/RESULTS.md`.
