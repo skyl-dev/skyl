@@ -26,6 +26,6 @@
 ## Checks
 
 - [ ] `scripts/validate.py` passes
-- [ ] `scripts/leakcheck.sh` passes — no eval-speak inside installable sections
-- [ ] `scripts/xrefcheck.py` passes — every cross-skill reference resolves
+- [ ] `scripts/leakcheck.sh` passes, no eval-speak inside installable sections
+- [ ] `scripts/xrefcheck.py` passes, every cross-skill reference resolves
 - [ ] `## Provenance` reports what did **not** work, not only what did

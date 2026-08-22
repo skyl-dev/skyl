@@ -6,7 +6,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        A wrong rule is worse than a missing one. Four reversals have been caught already — a
+        A wrong rule is worse than a missing one. Four reversals have been caught already, a
         deprecated API still recommended everywhere, a default inverted by a major version, a
         library at alpha presented as the standard answer.
   - type: input

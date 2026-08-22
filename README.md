@@ -1,6 +1,6 @@
 # Skyl
 
-**skyl** (like *skill*) — a composable registry of AI agent skills.
+**skyl** (like *skill*), a composable registry of AI agent skills.
 
 Most published agent skills are one large markdown file covering an entire domain, so most of what
 they contain is irrelevant to any given project. Skyl's proposition is that expertise decomposes
@@ -15,20 +15,20 @@ web/core + typescript + react
 
 ## What makes this different
 
-Every rule here was **measured before it shipped**, and rules that failed to measure were removed.
+Every rule here was **measured before it shipped** and rules that failed to measure were removed.
 
 | | |
 |---|---|
 | skills | **13** (`android`) |
 | rules | **146** |
 | rules **retired** because a model already did it unprompted | **18** |
-| recorded runs | **519**, across 21 evals |
+| recorded runs | **519** across 21 evals |
 | models | Opus 5 · Sonnet 5 · Haiku 4.5 · qwen3.7-max |
 | harnesses | `claude` CLI · `opencode` |
 | providers | Anthropic · OpenRouter |
 
-The retirements are the point. A rule is not admitted because it is *true* — most published skill
-content is true — but because a model **gets it wrong without being told**. When a control arm
+The retirements are the point. A rule is not admitted because it is *true* (most published skill
+content is true) but because a model **gets it wrong without being told**. When a control arm
 already does the right thing, the rule costs context and buys nothing, so it goes.
 
 See [EVIDENCE.md](./EVIDENCE.md) for what was run, and the
@@ -48,7 +48,7 @@ Then it is written, drafted against a corpus, checked against primary sources, a
 control arm. Full method in [spec/METHOD.md](./spec/METHOD.md).
 
 **A finding that shapes everything here:** corpus support is an *anti-signal*. The more repositories
-that document a practice, the more likely a model already follows it — because the corpus and the
+that document a practice, the more likely a model already follows it, because the corpus and the
 model's training data are the same material. Rules drawn from what everyone writes down measure
 nothing. Every confirmed result in this registry came from a control arm or a primary source, and
 never from corpus frequency.
@@ -63,7 +63,7 @@ than ahead of it. Nothing is stable, and the CLI does not exist yet.
 ```
 skills/        curated skills, one directory per family
 incubating/    submitted, not yet measured
-evidence/      per-skill eval results, seeds, and arm prompts — replayable
+evidence/      per-skill eval results, seeds, and arm prompts, replayable
 spec/          format, axis vocabulary, admission bar, method
 scripts/       index / validate / gates
 ```

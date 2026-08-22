@@ -37,11 +37,11 @@ GOOD   "Photos taken on the phone's own camera should look the same in the app
 BAD    "Apply the EXIF orientation before displaying the image."
 ```
 
-The situation goes in the **seed**, not the prompt. A brownfield project is given to the run with
-the trap already in it — a store documented as synchronous, a manifest that already declares a
+The situation goes in the **seed** not the prompt. A brownfield project is given to the run with
+the trap already in it, a store documented as synchronous, a manifest that already declares a
 permission nothing requests, a data class whose total sits outside `equals`.
 
-## Temptation — a score is only evidence if the task created the situation
+## Temptation, a score is only evidence if the task created the situation
 
 A rule that scores 12/12 on a task that never tempted it has not been measured. Every eval records
 which rules the task tempted and which it did not, and the ones it did not are published as
@@ -52,7 +52,7 @@ which rules the task tempted and which it did not, and the ones it did not are p
 At two runs per cell, only **0/2 → 2/2** counts. A move from 1/2 to 2/2 is one run and is noise.
 Predictions are written down **before** scoring, including what would falsify the skill.
 
-## Void conditions — a run that is not evidence
+## Void conditions, a run that is not evidence
 
 A run is void, not weak, if it hit a provider error, was killed, produced no files, cannot confirm
 which model served it, or **executed anywhere it could read the skill under test**.
@@ -64,9 +64,8 @@ execute outside the repository and copy their output back in.
 
 ## The detector
 
-Scoring is mechanical, and the scoring code is the most error-prone part of the whole method —
-**thirteen detector errors so far, every one found by reading the generated code rather than the
-table.** Four were the same shape: a column naming *one* mechanism where the rule permits several,
+Scoring is mechanical, and the scoring code is the most error-prone part of the whole method, **thirteen detector errors so far, every one found by reading the generated code rather than the
+table.** Four were the same shape: a column naming *one* mechanism where the rule permits several
 which fails in the direction that flatters the skill.
 
 ```
@@ -77,7 +76,7 @@ Scored as:     a failure. The skill appeared to separate. It did not.
 ```
 
 So: **a detector asks for the outcome the rule cares about, never the mechanism the rule happens to
-name**, and it is run against the unmodified seed first — a column that fires on the seed is
+name** and it is run against the unmodified seed first, a column that fires on the seed is
 measuring the seed.
 
 Fixtures include a **near-miss** class, not just a hit and a miss: a comment that mentions the API

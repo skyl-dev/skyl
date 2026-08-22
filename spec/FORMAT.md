@@ -13,7 +13,7 @@ skills/android/kotlin/
 
 ```yaml
 ---
-name: android/kotlin          # family/skill — the installable identity
+name: android/kotlin          # family/skill, the installable identity
 axis: language                # core | language | framework | service | topic
 family: android
 requires: [android/core]      # skills that must be installed alongside
@@ -27,11 +27,11 @@ detect:                       # how a project is recognised
 ```
 
 **`agent_sections` is the load-bearing field.** The file is written for two readers. An installer
-gives the agent only the listed sections; everything else — `## Why`, `## Pitfalls`,
-`## Provenance` — is for the human deciding whether to trust the skill. That split is what lets a
+gives the agent only the listed sections; everything else, `## Why`, `## Pitfalls`
+`## Provenance`, is for the human deciding whether to trust the skill. That split is what lets a
 skill carry its own evidence without spending the agent's context on it.
 
-`detect` keys are family-defined and resolved by the index. Current keys: `gradle_dependency`,
+`detect` keys are family-defined and resolved by the index. Current keys: `gradle_dependency`
 `gradle_plugin`, `file`, `manifest_element`, `manifest_attribute`.
 
 ## Sections
@@ -48,17 +48,17 @@ skill carry its own evidence without spending the agent's context on it.
 Three parts, always:
 
 ```markdown
-- **ASYNC-4** `must` — A read that can be re-triggered — a query, a filter, a refresh — is
+- **ASYNC-4** `must`: A read that can be re-triggered, a query, a filter, a refresh, is
   cancelled by the operator built for it, not by tracking jobs by hand.
   *Why:* hand-tracked jobs race their own cancellation on fast input. And cancelling a write does
-  not un-send it — the request may already have reached the server.
+  not un-send it, the request may already have reached the server.
   *Not when:* every emission must be processed, where the operator is losing work by design.
 ```
 
-**A decidable instruction.** Not "use flows appropriately" — a reader must be able to look at a
+**A decidable instruction.** Not "use flows appropriately", a reader must be able to look at a
 file and say yes or no. Undecidable text is unfalsifiable, and unfalsifiable text is unactionable.
 
-**A `Why` that names the failure**, not the principle. The reader has to be able to recognise the
+**A `Why` that names the failure** not the principle. The reader has to be able to recognise the
 bug in the wild.
 
 **A `Not when`.** Almost nobody writes these, and their absence is what turns a rules file into a
@@ -71,11 +71,11 @@ listed in `retired:` and stays retired, because published evidence and cross-ref
 
 ## Priority
 
-`must` — the failure is silent, expensive, or hard to reverse.
-`should` — real exceptions exist, and the rule says to name yours.
+`must`, the failure is silent, expensive, or hard to reverse.
+`should`, real exceptions exist, and the rule says to name yours.
 
 ## Cross-references
 
 A rule may cite another skill's rule as `` `android/core WORK-3` ``. Every such reference is
 resolved by `scripts/xrefcheck.py` in CI; a reference to a rule that does not exist fails the
-build. Layers must not restate each other — see [METHOD.md](./METHOD.md).
+build. Layers must not restate each other, see [METHOD.md](./METHOD.md).

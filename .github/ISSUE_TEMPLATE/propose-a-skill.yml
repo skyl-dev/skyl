@@ -19,7 +19,7 @@ body:
     id: detect
     attributes:
       label: How is it detected?
-      description: A topic that nothing detects is not a skill — it is a references file inside the skill that owns it.
+      description: A topic that nothing detects is not a skill, it is a references file inside the skill that owns it.
     validations: { required: true }
   - type: textarea
     id: overlap

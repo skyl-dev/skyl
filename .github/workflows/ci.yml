@@ -1,0 +1,42 @@
+name: checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  gates:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Format and rule shape
+        run: ./scripts/validate.py skills
+
+      - name: No evaluation language in installable sections
+        run: |
+          shopt -s nullglob
+          files=(skills/*/*/SKILL.md)
+          if [ ${#files[@]} -eq 0 ]; then echo "no skills yet"; exit 0; fi
+          bash scripts/leakcheck.sh "${files[@]}"
+
+      - name: Cross-skill references resolve
+        run: |
+          for family in skills/*/; do
+            [ -d "$family" ] || continue
+            ./scripts/xrefcheck.py "$family"
+          done
+
+      - name: Index is current
+        run: |
+          if [ -f scripts/build-index.py ]; then
+            ./scripts/build-index.py > /tmp/index.json
+            diff -q /tmp/index.json index.json || {
+              echo "index.json is stale. Run scripts/build-index.py and commit the result."
+              exit 1
+            }
+          fi

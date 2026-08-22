@@ -7,7 +7,7 @@ body:
     attributes:
       value: |
         Every rule here claims a model gets something wrong without being told. If you can show it
-        doesn't, the rule is a candidate for retirement — 18 have been removed this way.
+        doesn't, the rule is a candidate for retirement, 18 have been removed this way.
 
         A control run means **no skill loaded**. If the skill was loaded, this is not a challenge.
   - type: input
