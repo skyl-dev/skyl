@@ -1,0 +1,35 @@
+name: Propose a skill
+description: A concern not covered by an existing skill.
+title: "[skill] <family>/<name>"
+labels: [skill, incubating]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Proposed name
+      placeholder: android/testing
+    validations: { required: true }
+  - type: dropdown
+    id: axis
+    attributes:
+      label: Axis
+      options: [core, language, framework, service, topic]
+    validations: { required: true }
+  - type: textarea
+    id: detect
+    attributes:
+      label: How is it detected?
+      description: A topic that nothing detects is not a skill — it is a references file inside the skill that owns it.
+    validations: { required: true }
+  - type: textarea
+    id: overlap
+    attributes:
+      label: What does it overlap?
+      description: Name the existing skills whose territory it touches, and where the boundary sits.
+    validations: { required: true }
+  - type: textarea
+    id: wrong
+    attributes:
+      label: What do models get wrong here?
+      description: The strongest case is a control run. The weakest is "this is important".
+    validations: { required: true }

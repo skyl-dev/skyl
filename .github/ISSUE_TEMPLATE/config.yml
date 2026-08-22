@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: How curation works
+    url: https://github.com/skyl-dev/skyl/blob/main/spec/ADMISSION.md
+    about: The four admission tests, the capability window, and why corpus support is an anti-signal.

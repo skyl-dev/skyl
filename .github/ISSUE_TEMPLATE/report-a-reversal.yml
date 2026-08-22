@@ -1,0 +1,38 @@
+name: Report a reversal
+description: A rule cites platform behaviour that has since changed.
+title: "[reversal] <skill> <RULE-ID>"
+labels: [reversal, correctness]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        A wrong rule is worse than a missing one. Four reversals have been caught already — a
+        deprecated API still recommended everywhere, a default inverted by a major version, a
+        library at alpha presented as the standard answer.
+  - type: input
+    id: rule
+    attributes:
+      label: Rule
+      placeholder: android/db STORE-3
+    validations: { required: true }
+  - type: textarea
+    id: claim
+    attributes:
+      label: What the rule currently says
+    validations: { required: true }
+  - type: textarea
+    id: reality
+    attributes:
+      label: What is actually true now
+    validations: { required: true }
+  - type: input
+    id: source
+    attributes:
+      label: Primary source
+      description: Official docs, release notes, or the API reference. Not a blog post.
+    validations: { required: true }
+  - type: input
+    id: since
+    attributes:
+      label: Changed as of
+      placeholder: API 37 / library 3.0 / June 2025

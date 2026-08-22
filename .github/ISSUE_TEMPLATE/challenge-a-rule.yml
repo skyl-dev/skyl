@@ -1,0 +1,60 @@
+name: Challenge a rule
+description: Show a control run where the model already does what a rule says. This is the most valuable issue you can open.
+title: "[challenge] <skill> <RULE-ID>"
+labels: [challenge, evidence]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Every rule here claims a model gets something wrong without being told. If you can show it
+        doesn't, the rule is a candidate for retirement — 18 have been removed this way.
+
+        A control run means **no skill loaded**. If the skill was loaded, this is not a challenge.
+  - type: input
+    id: rule
+    attributes:
+      label: Rule
+      placeholder: android/kotlin ASYNC-4
+    validations: { required: true }
+  - type: input
+    id: model
+    attributes:
+      label: Model
+      description: Exact id, as the provider reports it.
+      placeholder: claude-haiku-4-5-20251001
+    validations: { required: true }
+  - type: input
+    id: harness
+    attributes:
+      label: Harness and provider
+      placeholder: claude CLI, Anthropic direct
+    validations: { required: true }
+  - type: textarea
+    id: task
+    attributes:
+      label: The task, verbatim
+      description: What you asked for. If it named the mechanism the rule prescribes, it measured instruction-following rather than the rule.
+    validations: { required: true }
+  - type: textarea
+    id: output
+    attributes:
+      label: What the model produced
+      description: The relevant code, unedited.
+      render: kotlin
+    validations: { required: true }
+  - type: input
+    id: runs
+    attributes:
+      label: How many runs, and how many satisfied the rule
+      description: One run is an anecdote. Two of two is the reading bar used here.
+      placeholder: 2 of 2
+    validations: { required: true }
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Before submitting
+      options:
+        - label: No skill file was loaded in this run
+          required: true
+        - label: The task created the situation rather than describing the fix
+          required: true
