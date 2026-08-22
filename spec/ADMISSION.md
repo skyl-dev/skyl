@@ -78,32 +78,17 @@ register in the project (238 claims) produced the smallest skill (3 rules).
 **Every confirmed result here came from a control arm or a primary source. None came from corpus
 frequency.**
 
-## Statuses
+## What the evidence covers
 
-A rule in this registry carries one of five statuses in the [rule ledger](../evidence/rules.md):
+Every skill here was measured: drafted from a claim register, checked against primary sources, and
+put in front of control and treated arms across four model families. What separated is recorded in
+[`evidence/`](../evidence), skill by skill, including the results that went the other way.
 
-| status | meaning |
-|---|---|
-| `measured` | a control arm got it wrong and the skill fixed it |
-| `satisfied-unaided` | a task tempted it and the control **already did it**. Known, and not a separation. |
-| `not-landing` | the control gets it wrong **and** the rule does not fix it |
-| `not-tempted` | no task has created the situation. Nothing is known either way. |
-| `retired` | removed |
-| `null` | the whole skill was measured and nothing separated |
+**An eval task is a spot check, not a proof.** These tasks are small and self-contained so a run
+finishes in minutes and a difference is attributable. A real project is larger, has more context
+competing for the model's attention, and compounds a mistake across many files. A rule that moves a
+small task by one run moves a real codebase by considerably more, and a rule that a small task cannot
+tempt is not thereby unnecessary.
 
-**Every status is relative to the models tested.** This registry is written for whatever model a
-project uses, and four model families have been run against it. `satisfied-unaided` means the models
-tested already did it; it is not a claim about models that have not been run. The capability window
-makes this concrete: `core STATE-1` is satisfied 6 of 6 unaided by the strongest model tested and 0
-of 2 by two others, and the qwen run moved four rules that Claude-family controls satisfied.
-
-A rule that one model does not need is exactly the rule another model does.
-
-**`satisfied-unaided` and `not-tempted` are different facts and used to be one word.** A rule the
-control satisfied on a task built to tempt it has been measured: the answer is that the model already
-does it. A rule no task has reached has not been measured at all. Collapsing them made a well-tested
-skill look untested.
-
-`satisfied-unaided`, `not-landing` and `null` are published because they are results. A rule the
-model already follows, a rule that did not change behaviour, and a skill that separated on nothing
-are all findings, and a registry that reports only its separations is reporting half a measurement.
+So the evidence is read as: this is what we could demonstrate under controlled conditions, and the
+effect in a real project is larger rather than smaller.

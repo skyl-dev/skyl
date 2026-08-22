@@ -67,17 +67,3 @@ Eval 16 first reported `GRANT-3` as *"Sonnet accepts a coarse grant in 3 of 6 wi
 That came from a column matching a **declaration** rather than a request, and then from a rescore
 whose pattern missed a `const val` binding. Re-scored, both Sonnet skill runs used coarse location
 and nothing else. The correction is annotated in place rather than swapped silently.
-
-## Ledger
-
-| rule | status | evidence |
-|---|---|---|
-| `ASK-2` | measured | Haiku 0/2 → 2/2. Now ranks its two fixes after Haiku chose the worse one. |
-| `ASK-1` | measured | The belt-and-braces clause took Haiku from 2/2 violations to 0/2 in eval 16b. |
-| `LEAST-1` | measured | Haiku 0/2 → 2/2 on requesting coarse location alone. Added from a diagnosis and then tested. |
-| `GRANT-1` | measured | Sonnet 0/2 → 2/2. Haiku 0/6 in every arm. |
-| `GRANT-3` | not-landing | Haiku requests fine location alone in all six runs. Depends on `LEAST-1` upstream. |
-| `ASK-4` | not-tempted | The rationale ambiguity was not separately tempted. |
-| `GRANT-2` | satisfied-unaided | The degrade half was satisfied 12 of 12; the re-prompt-loop half was never reached. |
-| `DECL-1` | not-tempted | Not separately tempted. |
-| `ASK-3` | retired | Zero launch-time requests in 12 of 12 runs, every arm including both controls. |

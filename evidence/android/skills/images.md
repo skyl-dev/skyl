@@ -49,17 +49,3 @@ was counted as a decode size. A rotation matrix call was counted as a resize.
 
 All three were found by reading the generated code. The fixtures written beforehand passed every one
 of them, because they were too clean to contain the near miss.
-
-## Ledger
-
-| rule | status | evidence |
-|---|---|---|
-| `LOAD-2` | measured | Haiku 0/2 → 2/2. Sonnet satisfies it unaided. |
-| `MEM-1` | measured | Haiku 0/2 → 2/2 on the upload path. Sonnet satisfies it unaided. |
-| `LOAD-1` | not-landing | Haiku 0/2 → 1/2, which is one run and is noise. Sonnet unaided. |
-| `CACHE-1` | not-landing | Haiku 0/2 → 1/2, noise. Sonnet 2/2 in control. |
-| `CACHE-2` | not-landing | Sonnet 2/2 in control; Haiku 0/6 in every arm including with the skill. |
-| `USER-2` | satisfied-unaided | The persistable-grant half was never tempted: every run uploaded immediately. |
-| `MEM-2` | retired | 12 of 12 task-A runs, both models, every arm. |
-| `USER-1` | retired | The orientation half was written correctly by the Haiku control. |
-| `TEST-1` | retired | A subset of `android/testing REACH-1`. Stated once, there. |

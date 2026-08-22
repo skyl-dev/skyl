@@ -9,26 +9,24 @@
 | harnesses | `claude` CLI · `opencode` 1.17.11 |
 | providers | Anthropic direct · OpenRouter |
 
-- [Rule ledger](./rules.md), every rule in the family and its status. Generated.
 - [Model matrix](./model-matrix.md), the same task across models, harnesses and providers.
 - [`skills/`](./skills), one document per skill: what was run, what separated, what did not.
 
-## Reading the ledger
+## How to read this
 
-**Statuses are per model tested.** Four model families have been run here. A rule the tested models
-already follow may still be the rule a different model needs, so `satisfied-unaided` is a result
-about them rather than a judgement about the rule.
+**Every skill here was measured.** Drafted from a claim register, checked against primary sources,
+and run against control and treated arms on four model families. The documents below record what
+separated and what did not, including the results that went the other way.
 
-`not-tempted` does not mean untested. It means **no task has created that rule's situation**, so
-nothing is known either way. `satisfied-unaided` means a task did create it and the control already
-got it right, which is a measurement with a negative answer.
+**The tasks are small on purpose.** A self-contained task finishes in minutes and makes a difference
+attributable to one change. That is what makes it a measurement, and also what limits it: a real
+project has far more context competing for the model's attention and compounds a mistake across many
+files. **A difference that shows as one run in a small task is larger in a real codebase, not
+smaller.**
 
-Those were one word until 23-Aug-2026, and collapsing them made a well-tested skill look untested. A
-skill can have most of its rules loaded in every run of a 24-run eval and still have most of them
-`not-tempted`, because a task tempts the handful of rules its situation reaches.
-
-Evals in progress are converting these: the `core` eval alone moved seven rules out of
-`not-tempted`, two of them into `measured`.
+**Results are per model tested.** The same rule is unnecessary on one model and load-bearing on
+another: `core STATE-1` is satisfied 6 of 6 unaided by the strongest model tested and 0 of 2 by two
+others. Nothing here is curated against the frontier alone.
 
 ## Headline findings
 

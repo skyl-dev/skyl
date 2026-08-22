@@ -49,24 +49,3 @@ exceptions thrown in `doInBackground`, and its default executor is serial.
 The `LEAK-*` rules and `CONVERT-4`/`CONVERT-5` were added after re-reading the claim register rather
 than an extraction summary of it. The first draft had been made from the summary and missed the
 entire Android-Java cluster the evidenced claims actually name.
-
-## Ledger
-
-| rule | status | evidence |
-|---|---|---|
-| `ASYNC-5` | measured | 0/2 → 2/2 on both models. |
-| `INTEROP-1` | measured | Haiku 0/2 → 2/2. Inert on Sonnet. |
-| `CONVERT-1` | satisfied-unaided | Its observation-contract clause was unnecessary in 12 of 12 runs. |
-| `LEAK-2` | not-tempted | Scored as not landing; reading the runs showed the models correctly applied `CONVERT-1` instead. Its own effect is untested. |
-| `NULL-1` | not-tempted | Task A discarded. |
-| `NULL-2` | not-tempted | Not separately tempted. |
-| `INTEROP-2` | not-tempted | Not separately tempted. |
-| `LEAK-1` | not-tempted | Task A discarded. |
-| `LEAK-3` | not-tempted | Task A discarded. |
-| `ASYNC-1` | not-tempted | Task A discarded. Its factual claim was corrected against primary sources. |
-| `ASYNC-2` | not-tempted | Task A discarded. |
-| `ASYNC-4` | not-tempted | Task A discarded. |
-| `CONVERT-2` | not-tempted | Not separately tempted. |
-| `CONVERT-3` | not-tempted | Not separately tempted. |
-| `CONVERT-4` | not-tempted | Added after re-reading the register. Not tempted. |
-| `CONVERT-5` | not-tempted | Added after re-reading the register. Not tempted. |

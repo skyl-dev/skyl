@@ -45,17 +45,3 @@ jobs:
             exit 1
           fi
           echo "index.json matches skills/"
-
-      - name: Ledger covers every rule
-        run: |
-          for family in evidence/*/; do
-            [ -d "$family" ] || continue
-            name=$(basename "$family")
-            [ -d "skills/$name" ] || continue
-            ./scripts/build-ledger.py "$name" > /tmp/rules.md
-            if ! diff -u "$family/rules.md" /tmp/rules.md; then
-              echo "::error::evidence/$name/rules.md does not match. Regenerate and commit it."
-              echo "Run: ./scripts/build-ledger.py $name > evidence/$name/rules.md"
-              exit 1
-            fi
-          done

@@ -14,8 +14,7 @@ only if the model got it wrong.
 | providers | Anthropic direct · OpenRouter |
 | rules retired on measurement | **17** |
 
-Per skill: [`evidence/`](./evidence). Across skills: the [rule ledger](./evidence/rules.md).
-Method: [`spec/METHOD.md`](./spec/METHOD.md).
+Per skill: [`evidence/`](./evidence). Method: [`spec/METHOD.md`](./spec/METHOD.md).
 
 ## Three arms, because two are not enough
 
@@ -68,8 +67,8 @@ project, 238 claims, produced the smallest skill, 3 rules.
 its provenance records that the task tempted every scope decision the skill makes and both models
 made the right call unaided.
 
-**Some rules do not land.** A rule can name a genuine failure and fail to fix it. Those are marked
-`not-landing` rather than quietly dropped or quietly counted.
+**Some rules do not land.** A rule can name a genuine failure and fail to fix it on the models
+tested. Those are recorded in the skill's evidence rather than quietly dropped or quietly counted.
 
 ## What went wrong
 

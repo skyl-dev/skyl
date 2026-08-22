@@ -61,17 +61,3 @@ control catches `CancellationException` and rethrows *on the following line*, an
 Rewritten as the outcome, is cancellation swallowed, with three accepted mechanisms, the separation
 moved to Haiku and Sonnet turned out clean in all six runs. Thirteenth scoring error in the project
 and the fourth of that shape, which fails in the direction that flatters the skill.
-
-## Ledger
-
-| rule | status | evidence |
-|---|---|---|
-| `ASYNC-2` | measured | Haiku 2/2 → 0/2 violations. Sonnet clean in all six runs. |
-| `ASYNC-4` | measured | Haiku 2/2 → 0/2 violations. Sonnet clean unaided. |
-| `TYPE-1` | measured | Haiku 2/2 → 0/2. Sonnet 1/2 → 0/2. |
-| `ASYNC-3` | not-tempted | Neither task created a group of concurrent children. |
-| `ASYNC-5` | not-landing | 1 of 12 runs, and that one a skill arm. |
-| `TYPE-3` | not-landing | 12 of 12 runs left a mutable collection in a public signature. |
-| `ASYNC-1` | retired | 0 violations in 12 runs, every arm. |
-| `TYPE-2` | retired | 0 violations in 12 runs, every arm. |
-| `SER-1` | retired | 0 violations in 12; 10 of 12 made the field nullable unprompted. |

@@ -36,16 +36,3 @@ smaller model, which is weaker than the bar normally accepts and is marked accor
 The corpus called this skill a null result: 31 high-worth claims, 5 evidenced, 100% contested, and
 the summary read that it had no content that was only its own. The measurement disagreed. The
 eight-rule first draft was also wrong, in the other direction.
-
-## Ledger
-
-| rule | status | evidence |
-|---|---|---|
-| `REPO-4` | measured | 0/2 → 2/2 on both tasks, both models. Reproduced twice. |
-| `REPO-3` | measured | 0/2 → 2/2 once a task supplied two data origins. Reported dead by a task that did not tempt it. |
-| `VM-2` | not-tempted | Never tempted: neither task needs a `Context` in a state holder. |
-| `VM-3` | not-tempted | Not separately tempted. |
-| `VM-4` | not-tempted | Not separately tempted. |
-| `REPO-1` | not-tempted | Not separately tempted. |
-| `REPO-2` | not-tempted | Not separately tempted. |
-| `VM-1` | retired | Tempted by both tasks and satisfied in every arm including the controls. |

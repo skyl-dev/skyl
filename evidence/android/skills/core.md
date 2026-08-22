@@ -72,42 +72,6 @@ Both were added on the strength of a large claim register and removed by the fir
 The rules predating eval 01 carry the evidence in that eval's write-up rather than a per-rule score.
 `WORK-1`, `WORK-2` and the localization rules were not separately tempted by either task.
 
-## Ledger
-
-Every rule, and what is known about it. `scripts/build-ledger.py` reads this table, so a rule
-missing from it fails the build.
-
-| rule | status | evidence |
-|---|---|---|
-| `STATE-1` | measured | Sonnet and Haiku 0/2 → 2/2. Opus 6/6 unaided. |
-| `STATE-4` | measured | Opus 0/6 → 6/6. Separates only where the model can act on it. |
-| `DATA-2` | measured | Haiku 0/2 → 2/2, Sonnet 1/2 → 2/2. Replicated in `opencode` and on qwen. |
-| `DATA-4` | measured | Haiku 0/2 → 2/2 with kotlin loaded. Inverted under `opencode`. |
-| `WORK-3` | not-landing | Haiku control fails 2/2. Skill fixes 1 of 2, which is noise. |
-| `BUILD-3` | not-landing | Haiku uses KAPT for Room in 4 of 4 runs, both arms. |
-| `A11Y-1` | satisfied-unaided | Satisfied in every control tested: Opus 6/6, Sonnet 2/2, Haiku 2/2, qwen yes. Degraded under `opencode` with the skill loaded. Not re-tempted by eval 23. |
-| `L10N-1` | measured | Haiku 2/2 → 0/2 on hand-rolled money patterns once a task gave it a multi-currency total. The earlier tasks never tempted it. |
-| `BOUND-1` | satisfied-unaided | Tempted by eval 23 and satisfied unaided: 0 violations in 8 runs, both arms. |
-| `BOUND-2` | not-tempted | Tempted by eval 23; moved by one run in each direction, which is noise. |
-| `BOUND-3` | satisfied-unaided | Tempted by eval 23 and satisfied unaided in 8 of 8. |
-| `STATE-2` | not-tempted | Not separately tempted. |
-| `STATE-3` | not-tempted | Not separately tempted. |
-| `DATA-1` | satisfied-unaided | Tempted by eval 23 and satisfied unaided in 8 of 8. |
-| `DATA-3` | not-tempted | Tempted by eval 23; moved by one run in each direction, which is noise. |
-| `WORK-1` | satisfied-unaided | Tempted by eval 23 and satisfied unaided: 0 violations in 8. |
-| `WORK-2` | satisfied-unaided | Tempted by eval 23 and satisfied unaided: 8 of 8 used a scheduler. |
-| `SEC-1` | not-tempted | Not separately tempted. |
-| `SEC-2` | not-landing | 0 of 8 runs declared `exported` on a receiver with an intent filter, or validated its extras. Stated, loaded, ignored. |
-| `SEC-3` | not-tempted | Appeared to fail in 7 of 8; the column was broader than the rule. What the runs logged was an order id, which the rule's boundary permits. |
-| `L10N-2` | measured | Haiku 2/2 → 0/2. The control renders the raw server enum; the treated arm maps it. |
-| `A11Y-2` | not-tempted | Not separately tempted. |
-| `BUILD-1` | retired | Shrinking present in 8 of 8 runs, every arm. |
-| `BUILD-2` | retired | No run violated it, and the task could not tempt the violation. |
-
-**Two rules were satisfied by every control run.** `A11Y-1` and `L10N-1` were satisfied by every control this
-project has run except one Haiku cell. By the admission bar they should go. They are listed rather
-than quietly kept, and rather than quietly cut without a task that tempts them properly.
-
 ## Method
 
 Arms, task design, void conditions and the detector discipline are in [spec/METHOD.md](../../../spec/METHOD.md).

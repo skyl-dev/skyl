@@ -31,8 +31,8 @@ The retirements are the point. A rule is not admitted because it is *true* (most
 content is true) but because a model **gets it wrong without being told**. When a control arm
 already does the right thing, the rule costs context and buys nothing, so it goes.
 
-See [EVIDENCE.md](./EVIDENCE.md) for what was run, and the
-[rule ledger](./evidence/rules.md) for the status of every rule in the registry.
+See [EVIDENCE.md](./EVIDENCE.md) for what was run, and [`evidence/`](./evidence) for what was
+found, skill by skill.
 
 ## How a skill is curated
 
