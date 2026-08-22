@@ -1,7 +1,0 @@
-We are adding Room to `:core-data` so notes are queried from a database instead of read off a pile
-of JSON files. Wire it up: an entity, a DAO, and the database class, exposed so `:app` can use them.
-
-This app has never shipped a release build. Make `./gradlew assembleRelease` produce something we
-could put on the Play Store.
-
-Change whatever needs changing. Write the files you would actually write.
