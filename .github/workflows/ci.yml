@@ -31,12 +31,31 @@ jobs:
             ./scripts/xrefcheck.py "$family"
           done
 
-      - name: Index is current
+      - name: Index is present and current
         run: |
-          if [ -f scripts/build-index.py ]; then
-            ./scripts/build-index.py > /tmp/index.json
-            diff -q /tmp/index.json index.json || {
-              echo "index.json is stale. Run scripts/build-index.py and commit the result."
-              exit 1
-            }
+          if [ ! -f index.json ]; then
+            echo "::error::index.json is missing. It is the resolvable form of skills/ and must be committed."
+            echo "Run: ./scripts/build-index.py > index.json"
+            exit 1
           fi
+          ./scripts/build-index.py > /tmp/index.json
+          if ! diff -u index.json /tmp/index.json; then
+            echo "::error::index.json does not match skills/. Regenerate and commit it."
+            echo "Run: ./scripts/build-index.py > index.json"
+            exit 1
+          fi
+          echo "index.json matches skills/"
+
+      - name: Ledger covers every rule
+        run: |
+          for family in evidence/*/; do
+            [ -d "$family" ] || continue
+            name=$(basename "$family")
+            [ -d "skills/$name" ] || continue
+            ./scripts/build-ledger.py "$name" > /tmp/rules.md
+            if ! diff -u "$family/rules.md" /tmp/rules.md; then
+              echo "::error::evidence/$name/rules.md does not match. Regenerate and commit it."
+              echo "Run: ./scripts/build-ledger.py $name > evidence/$name/rules.md"
+              exit 1
+            fi
+          done
