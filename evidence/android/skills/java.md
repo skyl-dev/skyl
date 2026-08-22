@@ -31,7 +31,7 @@ structural rules during a conversion.
 thirteen times, and it is why scoring code is now run against the unmodified seed first and its
 fixtures include near-misses.
 
-## A retirement candidate
+## Satisfied unaided
 
 `CONVERT-1` carries an observation-contract clause that eval 11 found unnecessary: all 12 runs kept
 `java.util.Observable` and none swapped it for a `Flow`, in any arm on either model. Kept on the
@@ -56,7 +56,7 @@ entire Android-Java cluster the evidenced claims actually name.
 |---|---|---|
 | `ASYNC-5` | measured | 0/2 → 2/2 on both models. |
 | `INTEROP-1` | measured | Haiku 0/2 → 2/2. Inert on Sonnet. |
-| `CONVERT-1` | candidate | Its observation-contract clause was unnecessary in 12 of 12 runs. Kept on a weak basis. |
+| `CONVERT-1` | satisfied-unaided | Its observation-contract clause was unnecessary in 12 of 12 runs. |
 | `LEAK-2` | not-tempted | Scored as not landing; reading the runs showed the models correctly applied `CONVERT-1` instead. Its own effect is untested. |
 | `NULL-1` | not-tempted | Task A discarded. |
 | `NULL-2` | not-tempted | Not separately tempted. |

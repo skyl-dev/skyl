@@ -86,7 +86,6 @@ A rule in this registry carries one of five statuses in the [rule ledger](../evi
 |---|---|
 | `measured` | a control arm got it wrong and the skill fixed it |
 | `satisfied-unaided` | a task tempted it and the control **already did it**. Known, and not a separation. |
-| `candidate` | satisfied unaided across more than one task. A retirement proposed, not applied. |
 | `not-landing` | the control gets it wrong **and** the rule does not fix it |
 | `not-tempted` | no task has created the situation. Nothing is known either way. |
 | `retired` | removed |
@@ -97,16 +96,6 @@ control satisfied on a task built to tempt it has been measured: the answer is t
 does it. A rule no task has reached has not been measured at all. Collapsing them made a well-tested
 skill look untested.
 
-`not-landing`, `candidate` and `null` are published deliberately.
-
-**A published rule is not retired on one task's evidence.** `core L10N-1` sat at `candidate` after
-several evals whose controls all satisfied it. A task that finally gave it a multi-currency total to
-format showed the control hardcoding the currency symbol and the exponent, and it moved to
-`measured`. What had looked like a rule the models absorbed was a rule nothing had asked about.
-
-So a retirement needs two independent tasks that both tempt the rule, and `candidate` is where a rule
-waits in the meantime, in public, with the measurement attached.
-
-`candidate` is the uncomfortable one and that is the point: it is a rule our own bar says should be
-removed, still present, in public, with the measurement attached. A registry that only reports its
-wins is not reporting, and one that hides its own backlog is worse.
+`satisfied-unaided`, `not-landing` and `null` are published because they are results. A rule the
+model already follows, a rule that did not change behaviour, and a skill that separated on nothing
+are all findings, and a registry that reports only its separations is reporting half a measurement.

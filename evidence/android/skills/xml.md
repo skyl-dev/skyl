@@ -47,8 +47,8 @@ included, which is the behaviour the corrected rule predicts.
 | `LIST-4` | measured | 0/2 → 2/2 on both models. Zero corpus support. |
 | `STATE-1` | measured | Separated on Sonnet, landed nowhere on Haiku. Zero corpus support. |
 | `HOST-1` | measured | Separated on Haiku, inert on Sonnet. |
-| `LIST-1` | candidate | Satisfied by every arm including the controls. Corpus-backed. |
-| `HOST-2` | candidate | Satisfied by every arm including the controls. Corpus-backed. |
+| `LIST-1` | satisfied-unaided | Satisfied by every arm including the controls. Corpus-backed. |
+| `HOST-2` | satisfied-unaided | Satisfied by every arm including the controls. Corpus-backed. |
 | `HOST-4` | not-tempted | Not separately tempted. |
 | `STATE-2` | not-tempted | Not separately tempted. |
 | `LAYOUT-1` | not-tempted | Not separately tempted. |

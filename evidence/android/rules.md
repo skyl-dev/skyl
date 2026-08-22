@@ -6,8 +6,7 @@ Every rule in the family, and what is known about it. Statuses are defined in
 | status | count |
 |---|---|
 | `measured` | 31 |
-| `satisfied-unaided` | 13 |
-| `candidate` | 7 |
+| `satisfied-unaided` | 20 |
 | `not-landing` | 11 |
 | `not-tempted` | 84 |
 | `retired` | 17 |
@@ -50,9 +49,9 @@ Every rule in the family, and what is known about it. Statuses are defined in
 | `android/core` | `SEC-2` | `not-landing` | 0 of 8 runs declared `exported` on a receiver with an intent filter, or validated its extras. Stated, loaded, ignored. |
 | `android/core` | `SEC-3` | `not-tempted` | Appeared to fail in 7 of 8; the column was broader than the rule. What the runs logged was an order id, which the rule's boundary permits. |
 | `android/core` | `BUILD-3` | `not-landing` | Haiku uses KAPT for Room in 4 of 4 runs, both arms. |
-| `android/core` | `L10N-1` | `measured` | Haiku 2/2 → 0/2 on hand-rolled money patterns once a task gave it a multi-currency total. Was a retirement candidate; the earlier tasks never tempted it. |
+| `android/core` | `L10N-1` | `measured` | Haiku 2/2 → 0/2 on hand-rolled money patterns once a task gave it a multi-currency total. The earlier tasks never tempted it. |
 | `android/core` | `L10N-2` | `measured` | Haiku 2/2 → 0/2. The control renders the raw server enum; the treated arm maps it. |
-| `android/core` | `A11Y-1` | `candidate` | Satisfied in every control tested: Opus 6/6, Sonnet 2/2, Haiku 2/2, qwen yes. Degraded under `opencode` with the skill loaded. Not re-tempted by eval 23. |
+| `android/core` | `A11Y-1` | `satisfied-unaided` | Satisfied in every control tested: Opus 6/6, Sonnet 2/2, Haiku 2/2, qwen yes. Degraded under `opencode` with the skill loaded. Not re-tempted by eval 23. |
 | `android/core` | `A11Y-2` | `not-tempted` | Not separately tempted. |
 | `android/core` | `BUILD-1` | `retired` | Shrinking present in 8 of 8 runs, every arm. |
 | `android/core` | `BUILD-2` | `retired` | No run violated it, and the task could not tempt the violation. |
@@ -71,7 +70,7 @@ Every rule in the family, and what is known about it. Statuses are defined in
 | `android/db` | `SYNC-2` | `not-landing` | First form failed in all 10 runs that produced code. Rewritten; the rewrite is untested. |
 | `android/db` | `READ-1` | `not-tempted` | Not separately tempted. |
 | `android/db` | `READ-2` | `not-tempted` | Not separately tempted. |
-| `android/di` | `SCOPE-1` | `satisfied-unaided` | Tempted and satisfied unaided by both models. Retirement candidate pending a task that separates it. |
+| `android/di` | `SCOPE-1` | `satisfied-unaided` | Tempted and satisfied unaided by both models. |
 | `android/di` | `SCOPE-2` | `not-tempted` | Sonnet satisfies it in every arm; Haiku fails in every arm including with the skill. Below the window. |
 | `android/di` | `SCOPE-3` | `not-tempted` | Never reached: neither task created a genuine domain lifetime. |
 | `android/di` | `GRAPH-1` | `satisfied-unaided` | Satisfied unaided in 11 of 12 runs. |
@@ -102,7 +101,7 @@ Every rule in the family, and what is known about it. Statuses are defined in
 | `android/java` | `ASYNC-2` | `not-tempted` | Task A discarded. |
 | `android/java` | `ASYNC-4` | `not-tempted` | Task A discarded. |
 | `android/java` | `ASYNC-5` | `measured` | 0/2 → 2/2 on both models. |
-| `android/java` | `CONVERT-1` | `candidate` | Its observation-contract clause was unnecessary in 12 of 12 runs. Kept on a weak basis. |
+| `android/java` | `CONVERT-1` | `satisfied-unaided` | Its observation-contract clause was unnecessary in 12 of 12 runs. |
 | `android/java` | `CONVERT-2` | `not-tempted` | Not separately tempted. |
 | `android/java` | `CONVERT-3` | `not-tempted` | Not separately tempted. |
 | `android/java` | `CONVERT-4` | `not-tempted` | Added after re-reading the register. Not tempted. |
@@ -135,9 +134,9 @@ Every rule in the family, and what is known about it. Statuses are defined in
 | `android/networking` | `FAIL-2` | `not-tempted` | Not separately tempted. |
 | `android/networking` | `FAIL-3` | `not-tempted` | Not exercised by either task. |
 | `android/networking` | `FAIL-4` | `not-tempted` | Not exercised by either task. |
-| `android/networking` | `AUTH-1` | `candidate` | Satisfied unaided by both models on a task built to tempt it. |
-| `android/networking` | `AUTH-2` | `candidate` | Satisfied unaided by both models on a task built to tempt it. |
-| `android/networking` | `AUTH-3` | `candidate` | Satisfied unaided by both models on a task built to tempt it. |
+| `android/networking` | `AUTH-1` | `satisfied-unaided` | Satisfied unaided by both models on a task built to tempt it. |
+| `android/networking` | `AUTH-2` | `satisfied-unaided` | Satisfied unaided by both models on a task built to tempt it. |
+| `android/networking` | `AUTH-3` | `satisfied-unaided` | Satisfied unaided by both models on a task built to tempt it. |
 | `android/networking` | `STREAM-1` | `not-tempted` | Not exercised by either task. |
 | `android/permissions` | `ASK-1` | `measured` | The belt-and-braces clause took Haiku from 2/2 violations to 0/2 in eval 16b. |
 | `android/permissions` | `ASK-2` | `measured` | Haiku 0/2 → 2/2. Now ranks its two fixes after Haiku chose the worse one. |
@@ -165,9 +164,9 @@ Every rule in the family, and what is known about it. Statuses are defined in
 | `android/testing` | `STATE-1` | `retired` | 10 of 12, no arm pattern. |
 | `android/testing` | `STREAM-1` | `retired` | 0 violations in 12 runs, every arm. |
 | `android/xml` | `HOST-1` | `measured` | Separated on Haiku, inert on Sonnet. |
-| `android/xml` | `HOST-2` | `candidate` | Satisfied by every arm including the controls. Corpus-backed. |
+| `android/xml` | `HOST-2` | `satisfied-unaided` | Satisfied by every arm including the controls. Corpus-backed. |
 | `android/xml` | `HOST-4` | `not-tempted` | Not separately tempted. |
-| `android/xml` | `LIST-1` | `candidate` | Satisfied by every arm including the controls. Corpus-backed. |
+| `android/xml` | `LIST-1` | `satisfied-unaided` | Satisfied by every arm including the controls. Corpus-backed. |
 | `android/xml` | `LIST-2` | `measured` | 0/2 → 2/2 on both models. Zero corpus support. |
 | `android/xml` | `LIST-3` | `measured` | Separated on Haiku, satisfied by Sonnet. Zero corpus support. |
 | `android/xml` | `LIST-4` | `measured` | 0/2 → 2/2 on both models. Zero corpus support. |

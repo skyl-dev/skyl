@@ -18,12 +18,10 @@ Checking OkHttp's actual defaults showed the per-operation timeouts are ten seco
 `callTimeout` defaults to none, so a request can keep resetting its own ten seconds while the call as
 a whole never finishes.
 
-## Retirement candidates
+## Satisfied unaided
 
 `AUTH-1`, `AUTH-2` and `AUTH-3` were satisfied unaided by both models **on a task built to tempt
-them**. That is the condition the admission bar removes a rule for. They are kept on the grounds
-that they cost little and the sample is two per cell, which is weaker than the bar normally accepts,
-so they are marked rather than quietly retained.
+them**. The sample is two runs per cell, so this is recorded as a result rather than treated as final.
 
 ## The pattern this skill demonstrates
 
@@ -39,9 +37,9 @@ than richness.
 | rule | status | evidence |
 |---|---|---|
 | `CLIENT-2` | measured | Haiku 0/2 → 2/2. Reason sourced from OkHttp's documented defaults, not the corpus. |
-| `AUTH-1` | candidate | Satisfied unaided by both models on a task built to tempt it. |
-| `AUTH-2` | candidate | Satisfied unaided by both models on a task built to tempt it. |
-| `AUTH-3` | candidate | Satisfied unaided by both models on a task built to tempt it. |
+| `AUTH-1` | satisfied-unaided | Satisfied unaided by both models on a task built to tempt it. |
+| `AUTH-2` | satisfied-unaided | Satisfied unaided by both models on a task built to tempt it. |
+| `AUTH-3` | satisfied-unaided | Satisfied unaided by both models on a task built to tempt it. |
 | `CLIENT-1` | not-tempted | Not separately tempted. |
 | `CLIENT-3` | not-tempted | Not exercised by either task. |
 | `WIRE-1` | not-tempted | Not separately tempted. |

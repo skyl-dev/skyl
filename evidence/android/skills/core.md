@@ -42,8 +42,8 @@ multi-currency total the Haiku control produced:
 ```
 
 A hardcoded symbol, a hardcoded exponent, and the symbol on the wrong side for a European locale.
-The earlier tasks had never given it anything to format. This is what the `candidate` status is for:
-a rule the bar said to remove, published rather than hidden, and rescued by a task that tempted it.
+The earlier tasks had never given it anything to format. Whether a rule is needed depends on whether
+a task has asked, and until one does the answer is unknown rather than negative.
 
 **Satisfied unaided in every arm:** the layer-direction rule, both work rules, one-source-of-truth,
 and string resources.
@@ -85,8 +85,8 @@ missing from it fails the build.
 | `DATA-4` | measured | Haiku 0/2 → 2/2 with kotlin loaded. Inverted under `opencode`. |
 | `WORK-3` | not-landing | Haiku control fails 2/2. Skill fixes 1 of 2, which is noise. |
 | `BUILD-3` | not-landing | Haiku uses KAPT for Room in 4 of 4 runs, both arms. |
-| `A11Y-1` | candidate | Satisfied in every control tested: Opus 6/6, Sonnet 2/2, Haiku 2/2, qwen yes. Degraded under `opencode` with the skill loaded. Not re-tempted by eval 23. |
-| `L10N-1` | measured | Haiku 2/2 → 0/2 on hand-rolled money patterns once a task gave it a multi-currency total. Was a retirement candidate; the earlier tasks never tempted it. |
+| `A11Y-1` | satisfied-unaided | Satisfied in every control tested: Opus 6/6, Sonnet 2/2, Haiku 2/2, qwen yes. Degraded under `opencode` with the skill loaded. Not re-tempted by eval 23. |
+| `L10N-1` | measured | Haiku 2/2 → 0/2 on hand-rolled money patterns once a task gave it a multi-currency total. The earlier tasks never tempted it. |
 | `BOUND-1` | satisfied-unaided | Tempted by eval 23 and satisfied unaided: 0 violations in 8 runs, both arms. |
 | `BOUND-2` | not-tempted | Tempted by eval 23; moved by one run in each direction, which is noise. |
 | `BOUND-3` | satisfied-unaided | Tempted by eval 23 and satisfied unaided in 8 of 8. |
@@ -104,7 +104,7 @@ missing from it fails the build.
 | `BUILD-1` | retired | Shrinking present in 8 of 8 runs, every arm. |
 | `BUILD-2` | retired | No run violated it, and the task could not tempt the violation. |
 
-**Two rules are retirement candidates.** `A11Y-1` and `L10N-1` were satisfied by every control this
+**Two rules were satisfied by every control run.** `A11Y-1` and `L10N-1` were satisfied by every control this
 project has run except one Haiku cell. By the admission bar they should go. They are listed rather
 than quietly kept, and rather than quietly cut without a task that tempts them properly.
 

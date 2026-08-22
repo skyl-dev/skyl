@@ -38,6 +38,6 @@ The largest register, 238 claims, produced the smallest skill, 3 rules.
 **Two skills measured as nulls.** `android/di` separated on nothing across 24 runs. Its task tempted
 every scope decision the skill makes and both models made the right call unaided.
 
-**Two rules are retirement candidates.** `core A11Y-1` and `core L10N-1` were satisfied by nearly
-every control run. By the admission bar they should be removed, and they are marked rather than
-quietly kept.
+**Some rules the models already follow.** `core A11Y-1` was satisfied by every control run tested.
+`core L10N-1` looked the same until a task gave it a multi-currency total to format, and then the
+Haiku control failed it in both runs. Whether a rule is needed depends on whether a task has asked.
