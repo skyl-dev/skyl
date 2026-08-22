@@ -24,6 +24,34 @@ Sonnet 5 and Haiku 4.5 to find where each rule sits in the capability window.
 `STATE-1` and `STATE-4` are the two bounds of the capability window in one table. The first is
 unnecessary at the frontier and needed below it; the second is the reverse.
 
+## Eval 23: the rules no task had reached
+
+Fourteen of the twenty-two rules had never been in front of a control arm. Two tasks, 16 runs,
+control and `+core`.
+
+**Two separations, both on Haiku.** `L10N-2`, the raw server enum rendered to a user, 2/2 → 0/2. And
+`L10N-1`, hand-rolled money and date patterns, also 2/2 → 0/2.
+
+**`L10N-1` was marked for retirement and should not have been.** It had been satisfied by every
+control run in earlier work, which is the condition for removing a rule. Given a task with a
+multi-currency total the Haiku control produced:
+
+```kotlin
+"USD" -> String.format("$%.2f", totalMinor / 100.0)
+"EUR" -> String.format("€%.2f", totalMinor / 100.0)
+```
+
+A hardcoded symbol, a hardcoded exponent, and the symbol on the wrong side for a European locale.
+The earlier tasks had never given it anything to format. This is what the `candidate` status is for:
+a rule the bar said to remove, published rather than hidden, and rescued by a task that tempted it.
+
+**Satisfied unaided in every arm:** the layer-direction rule, both work rules, one-source-of-truth,
+and string resources.
+
+**`SEC-2` did not land, and it is the clearest failure here.** The seed declares a broadcast receiver
+with an intent filter and no `exported` attribute. Not one run of eight added it, in either arm, and
+none validated the intent's extras.
+
 ## What did not land
 
 **`WORK-3`, the main thread.** The Haiku control calls a filesystem read and a SHA-256 straight out
@@ -57,21 +85,21 @@ missing from it fails the build.
 | `DATA-4` | measured | Haiku 0/2 → 2/2 with kotlin loaded. Inverted under `opencode`. |
 | `WORK-3` | not-landing | Haiku control fails 2/2. Skill fixes 1 of 2, which is noise. |
 | `BUILD-3` | not-landing | Haiku uses KAPT for Room in 4 of 4 runs, both arms. |
-| `A11Y-1` | candidate | Satisfied in every control tested: Opus 6/6, Sonnet 2/2, Haiku 2/2, qwen yes. Degraded under `opencode` with the skill loaded. Retirement not yet actioned. |
-| `L10N-1` | candidate | Opus 6/6, Sonnet 2/2, qwen yes. Only Haiku fails, at 1/2. |
-| `BOUND-1` | unmeasured | No task tempted a layering violation. |
-| `BOUND-2` | unmeasured | Not separately tempted. |
-| `BOUND-3` | unmeasured | Not separately tempted. |
+| `A11Y-1` | candidate | Satisfied in every control tested: Opus 6/6, Sonnet 2/2, Haiku 2/2, qwen yes. Degraded under `opencode` with the skill loaded. Not re-tempted by eval 23. |
+| `L10N-1` | measured | Haiku 2/2 → 0/2 on hand-rolled money patterns once a task gave it a multi-currency total. Was a retirement candidate; the earlier tasks never tempted it. |
+| `BOUND-1` | unmeasured | Tempted by eval 23 and satisfied unaided: 0 violations in 8 runs, both arms. |
+| `BOUND-2` | unmeasured | Tempted by eval 23; moved by one run in each direction, which is noise. |
+| `BOUND-3` | unmeasured | Tempted by eval 23 and satisfied unaided in 8 of 8. |
 | `STATE-2` | unmeasured | Not separately tempted. |
 | `STATE-3` | unmeasured | Not separately tempted. |
-| `DATA-1` | unmeasured | Not separately tempted. |
-| `DATA-3` | unmeasured | Not separately tempted. |
-| `WORK-1` | unmeasured | Not separately tempted. |
-| `WORK-2` | unmeasured | Not separately tempted. |
+| `DATA-1` | unmeasured | Tempted by eval 23 and satisfied unaided in 8 of 8. |
+| `DATA-3` | unmeasured | Tempted by eval 23; moved by one run in each direction, which is noise. |
+| `WORK-1` | unmeasured | Tempted by eval 23 and satisfied unaided: 0 violations in 8. |
+| `WORK-2` | unmeasured | Tempted by eval 23 and satisfied unaided: 8 of 8 used a scheduler. |
 | `SEC-1` | unmeasured | Not separately tempted. |
-| `SEC-2` | unmeasured | Not separately tempted. |
-| `SEC-3` | unmeasured | Not separately tempted. |
-| `L10N-2` | unmeasured | Not separately tempted. |
+| `SEC-2` | not-landing | 0 of 8 runs declared `exported` on a receiver with an intent filter, or validated its extras. Stated, loaded, ignored. |
+| `SEC-3` | unmeasured | Appeared to fail in 7 of 8; the column was broader than the rule. What the runs logged was an order id, which the rule's boundary permits. |
+| `L10N-2` | measured | Haiku 2/2 → 0/2. The control renders the raw server enum; the treated arm maps it. |
 | `A11Y-2` | unmeasured | Not separately tempted. |
 | `BUILD-1` | retired | Shrinking present in 8 of 8 runs, every arm. |
 | `BUILD-2` | retired | No run violated it, and the task could not tempt the violation. |
