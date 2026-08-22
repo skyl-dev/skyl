@@ -4,9 +4,9 @@
     "android"
   ],
   "counts": {
-    "skills": 5,
-    "rules": 72,
-    "retired": 8
+    "skills": 7,
+    "rules": 94,
+    "retired": 9
   },
   "skills": [
     {
@@ -106,6 +106,51 @@
       "installed_words": 1965
     },
     {
+      "name": "android/db",
+      "axis": "topic",
+      "family": "android",
+      "version": "1.0.0",
+      "requires": [
+        "android/core"
+      ],
+      "detect": {
+        "gradle_dependency": [
+          "androidx.room:room-runtime",
+          "androidx.datastore:datastore",
+          "androidx.datastore:datastore-preferences",
+          "app.cash.sqldelight"
+        ],
+        "file": [
+          "**/schemas/*.json"
+        ]
+      },
+      "path": "skills/android/db",
+      "rules": {
+        "total": 15,
+        "must": 12,
+        "should": 3,
+        "ids": [
+          "STORE-1",
+          "STORE-2",
+          "STORE-3",
+          "SCHEMA-1",
+          "SCHEMA-2",
+          "WRITE-1",
+          "WRITE-2",
+          "WRITE-3",
+          "CACHE-1",
+          "CACHE-2",
+          "CACHE-3",
+          "SYNC-1",
+          "SYNC-2",
+          "READ-1",
+          "READ-2"
+        ]
+      },
+      "retired": [],
+      "installed_words": 1426
+    },
+    {
       "name": "android/java",
       "axis": "language",
       "family": "android",
@@ -181,6 +226,43 @@
         "SER-1"
       ],
       "installed_words": 716
+    },
+    {
+      "name": "android/mvvm",
+      "axis": "topic",
+      "family": "android",
+      "version": "1.0.0",
+      "requires": [
+        "android/core"
+      ],
+      "detect": {
+        "file": [
+          "**/*ViewModel.kt",
+          "**/*ViewModel.java"
+        ],
+        "gradle_dependency": [
+          "androidx.lifecycle:lifecycle-viewmodel"
+        ]
+      },
+      "path": "skills/android/mvvm",
+      "rules": {
+        "total": 7,
+        "must": 5,
+        "should": 2,
+        "ids": [
+          "VM-2",
+          "VM-3",
+          "VM-4",
+          "REPO-1",
+          "REPO-2",
+          "REPO-3",
+          "REPO-4"
+        ]
+      },
+      "retired": [
+        "VM-1"
+      ],
+      "installed_words": 813
     },
     {
       "name": "android/xml",

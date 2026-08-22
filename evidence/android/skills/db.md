@@ -1,0 +1,64 @@
+# Evidence: `android/db`
+
+15 rules. One measured, one rewritten after failing to land, one shrunk to a pointer after a seam
+eval. The rest are unmeasured.
+
+## What was run
+
+| eval | what it tested | models | arms | runs |
+|---|---|---|---|---|
+| 08 | two screens over one cache | Haiku 4.5, Sonnet 5 | control / +core / +core+db | 12 |
+| 09 | the skill against `core` alone | Haiku 4.5, Sonnet 5 | control / +core / +core+db | 4 |
+| 10 | notes that sync | Haiku 4.5, Sonnet 5 | control / +core / +core+db | 11 |
+| 20 | the seam with `security` | Haiku 4.5, Sonnet 5 | control / +db / +security / both | 32 |
+
+## What separated
+
+`WRITE-1`, a multi-statement write is one transaction. Haiku wrote delete-then-insert with no
+transaction in **4 of 4** runs that used the pattern. Sonnet used a transaction in 3 of 3.
+
+## An eval that could not test this skill
+
+Eval 09 returned a null and the null was not informative: **the task specified the behaviour most of
+these rules describe**, so four rules had nothing to act on and the rest were told what to do by the
+prompt. It is recorded because a null from a task that cannot tempt the rules is not evidence of
+absence, and reading it as one would have deleted a skill on no information.
+
+## A rule that failed to land, and why it was the rule's fault
+
+`SYNC-2` first read *"resolved by a server-assigned version, never by device clocks"*. It failed to
+land in **every** treated run: all 10 runs that produced code used the device clock, because the
+task's API supplied no version and the rule named no alternative.
+
+**A prohibition with no actionable branch for the common case is not a rule a model can follow.** It
+was rewritten to state what to do when the server offers nothing.
+
+## What the seam eval changed
+
+`STORE-3` used to name the deprecated crypto wrapper and defer the alternative to `android/security`.
+Measured with four arms, `security` alone produced Keystore-backed encryption in **2/2** Haiku runs,
+and **`db` and `security` together produced 0/2**. The extra rule count displaced the rule that
+mattered, on the model least able to absorb it. Sonnet was unaffected.
+
+`STORE-3` is now a pointer. **Two skills carrying one hazard measurably degrades the smaller model**,
+which is the strongest argument in this project for the layering rule.
+
+## Ledger
+
+| rule | status | evidence |
+|---|---|---|
+| `WRITE-1` | measured | Haiku 4/4 runs wrote no transaction; Sonnet 3/3 used one. |
+| `SYNC-2` | not-landing | First form failed in all 10 runs that produced code. Rewritten; the rewrite is untested. |
+| `STORE-3` | measured | Shrunk to a pointer after the seam eval: `db` plus `security` produced 0/2 where `security` alone produced 2/2. |
+| `STORE-1` | unmeasured | Eval 09's task specified the behaviour. |
+| `STORE-2` | unmeasured | Not separately tempted. |
+| `SCHEMA-1` | unmeasured | Not separately tempted. |
+| `SCHEMA-2` | unmeasured | Not separately tempted. |
+| `WRITE-2` | unmeasured | Not separately tempted. |
+| `WRITE-3` | unmeasured | Not separately tempted. |
+| `CACHE-1` | unmeasured | Eval 09's task specified the behaviour. |
+| `CACHE-2` | unmeasured | Not separately tempted. |
+| `CACHE-3` | unmeasured | Not separately tempted. |
+| `SYNC-1` | unmeasured | Not separately tempted. |
+| `READ-1` | unmeasured | Not separately tempted. |
+| `READ-2` | unmeasured | Not separately tempted. |
