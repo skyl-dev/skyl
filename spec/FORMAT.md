@@ -44,6 +44,7 @@ After publication, semver applies to what an installer receives:
 | a rule retired, added, or its instruction changed | minor |
 | wording, `Why`, `Pitfalls`, `Provenance`, references | patch |
 | a rule id renamed, or `requires` changed | major |
+| `detect` widened or narrowed | minor |
 
 Evidence is anchored to **evals**, not to versions, because the evals are published and the
 pre-publication versions were not. A `## Provenance` entry says *"eval 19 measured all four"*, never

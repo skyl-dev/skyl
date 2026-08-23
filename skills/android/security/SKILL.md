@@ -3,16 +3,25 @@ name: android/security
 axis: topic
 family: android
 requires: [android/core]
-version: 1.0.0
+version: 1.1.0
 authors: [ahmmedrejowan]
 agent_sections: [rules]
 retired: []
 detect:
+  # An app that talks to a server holds a credential, whether or not it has reached for a
+  # crypto library yet. Detecting only the crypto libraries would have matched the projects
+  # that already thought about this and missed the ones that have not, which is backwards
+  # for a skill whose first rule is about what happens when nothing is declared.
   gradle_dependency:
     - "androidx.security:security-crypto"
     - "androidx.biometric:biometric"
     - "com.google.android.play:integrity"
     - "net.zetetic:sqlcipher-android"
+    - "com.squareup.retrofit2:retrofit"
+    - "com.squareup.okhttp3:okhttp"
+    - "io.ktor:ktor-client-core"
+    - "com.google.firebase:firebase-auth"
+    - "androidx.datastore:datastore-preferences"
   manifest_attribute: ["android:allowBackup", "android:dataExtractionRules"]
 ---
 

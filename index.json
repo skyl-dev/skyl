@@ -425,7 +425,7 @@
       "name": "android/security",
       "axis": "topic",
       "family": "android",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "requires": [
         "android/core"
       ],
@@ -434,7 +434,12 @@
           "androidx.security:security-crypto",
           "androidx.biometric:biometric",
           "com.google.android.play:integrity",
-          "net.zetetic:sqlcipher-android"
+          "net.zetetic:sqlcipher-android",
+          "com.squareup.retrofit2:retrofit",
+          "com.squareup.okhttp3:okhttp",
+          "io.ktor:ktor-client-core",
+          "com.google.firebase:firebase-auth",
+          "androidx.datastore:datastore-preferences"
         ],
         "manifest_attribute": [
           "android:allowBackup",
@@ -465,7 +470,7 @@
       "name": "android/testing",
       "axis": "topic",
       "family": "android",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "requires": [
         "android/core"
       ],

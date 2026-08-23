@@ -3,7 +3,7 @@ name: android/testing
 axis: topic
 family: android
 requires: [android/core]
-version: 1.0.0
+version: 1.0.1
 authors: [ahmmedrejowan]
 agent_sections: [rules]
 retired: [REACH-1, TIME-1, STATE-1, STREAM-1]
@@ -89,8 +89,10 @@ nothing, can be changed by anything, and is reset only if someone remembers.
 stated the clock case as a principle and the dispatcher case as a separate instruction three
 sections away, and the dispatcher one landed in zero runs of twenty-four while the clock one moved
 cleanly. The model built a seam for the clock and never connected it to `Dispatchers.IO` sitting in
-the same file. ** A principle stated once travels; the same principle stated twice as two instances
-does not.**## Pitfalls
+the same file. **A principle stated once travels; the same principle stated twice as two instances
+does not.**
+
+## Pitfalls
 
 <!-- human-only: not installed -->
 
