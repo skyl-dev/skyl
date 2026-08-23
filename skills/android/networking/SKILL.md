@@ -2,8 +2,9 @@
 name: android/networking
 axis: topic
 family: android
+description: "Talking to a server: client configuration, what comes back, what happens when it does not, and how a request is authorised. Use when the app makes HTTP calls."
 requires: [android/core]
-version: 1.0.0
+version: 1.0.1
 authors: [ahmmedrejowan]
 agent_sections: [rules]
 detect:

@@ -2,8 +2,9 @@
 name: android/mvvm
 axis: topic
 family: android
+description: "The shape of the layer graph: which layers exist, which way dependencies point, and what each one may touch. Use when the app has a ViewModel layer."
 requires: [android/core]
-version: 1.0.0
+version: 1.0.1
 authors: [ahmmedrejowan]
 agent_sections: [rules]
 retired: [VM-1]

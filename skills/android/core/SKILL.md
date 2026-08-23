@@ -2,8 +2,9 @@
 name: android/core
 axis: core
 family: android
+description: "Android architecture and platform decisions: where state lives, what survives process death, what work leaves the main thread, and what the platform can take away. Applies to any Android project, whatever the language or UI toolkit."
 requires: []
-version: 1.0.0
+version: 1.0.1
 authors: [ahmmedrejowan]
 agent_sections: [rules]
 retired: [BUILD-1, BUILD-2]

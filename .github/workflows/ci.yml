@@ -31,6 +31,9 @@ jobs:
             ./scripts/xrefcheck.py "$family"
           done
 
+      - name: Plugin marketplace matches skills
+        run: ./scripts/build-plugin.py --check
+
       - name: Index is present and current
         run: |
           if [ ! -f index.json ]; then

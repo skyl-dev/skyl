@@ -2,8 +2,9 @@
 name: android/compose
 axis: framework
 family: android
+description: "Jetpack Compose mechanics: what belongs in an effect rather than the composable body, how state is hoisted and remembered, and what makes a list recompose. Use when the UI is Compose."
 requires: [android/core]
-version: 1.0.0
+version: 1.0.1
 authors: [ahmmedrejowan]
 agent_sections: [rules]
 retired: [INTEROP-1, INTEROP-3]

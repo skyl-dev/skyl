@@ -2,8 +2,9 @@
 name: android/testing
 axis: topic
 family: android
+description: "What makes a test able to fail for the right reason: the shape of the seam, the scheduler it runs on, and what an assertion is allowed to know. Use when writing tests, or changing code to make one possible."
 requires: [android/core]
-version: 1.0.1
+version: 1.0.2
 authors: [ahmmedrejowan]
 agent_sections: [rules]
 retired: [REACH-1, TIME-1, STATE-1, STREAM-1]

@@ -2,8 +2,9 @@
 name: android/java
 axis: language
 family: android
+description: "Java on Android without the language features Kotlin has: threading, equality, resource handling, and interoperating with Kotlin. Use for a Java codebase or the Java half of a mixed one."
 requires: [android/core]
-version: 1.0.0
+version: 1.0.1
 authors: [ahmmedrejowan]
 agent_sections: [rules]
 detect:

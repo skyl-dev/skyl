@@ -1,0 +1,30 @@
+{
+  "name": "skyl",
+  "owner": {
+    "name": "ahmmedrejowan",
+    "url": "https://github.com/skyl-dev"
+  },
+  "metadata": {
+    "description": "Composable agent skills, one layer per concern.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "skyl-android",
+      "source": "./plugins/skyl-android",
+      "description": "Curated rules for Android projects, split by language, UI toolkit and concern, so a project loads only the layers that apply to it.",
+      "version": "1.1.14",
+      "author": {
+        "name": "ahmmedrejowan",
+        "url": "https://github.com/skyl-dev"
+      },
+      "homepage": "https://skyl.dev",
+      "license": "MIT",
+      "category": "development",
+      "keywords": [
+        "skyl",
+        "android"
+      ]
+    }
+  ]
+}

@@ -2,8 +2,9 @@
 name: android/permissions
 axis: topic
 family: android
+description: "Runtime permissions: whether to ask at all, how to ask, and what the app does with every answer including the silent ones. Use when the app touches the camera, location, microphone, files or notifications."
 requires: [android/core]
-version: 1.0.0
+version: 1.0.1
 authors: [ahmmedrejowan]
 agent_sections: [rules]
 retired: [ASK-3]

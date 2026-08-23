@@ -2,8 +2,9 @@
 name: android/di
 axis: topic
 family: android
+description: "The object graph: what lives how long, what may depend on what, and when a wiring mistake is discovered. Use when the project uses Hilt, Dagger or Koin."
 requires: [android/core]
-version: 1.0.0
+version: 1.0.1
 authors: [ahmmedrejowan]
 agent_sections: [rules]
 detect:

@@ -2,8 +2,9 @@
 name: android/images
 axis: topic
 family: android
+description: "Images that arrive at runtime, fetched or picked or decoded: caching, sizing, cancellation, and what a picker actually hands back. Use when images are part of the product."
 requires: [android/core]
-version: 1.0.0
+version: 1.0.1
 authors: [ahmmedrejowan]
 agent_sections: [rules]
 retired: [MEM-2, USER-1, TEST-1]

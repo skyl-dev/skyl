@@ -1,0 +1,19 @@
+{
+  "name": "skyl-android",
+  "displayName": "skyl android",
+  "version": "1.1.14",
+  "description": "Curated rules for Android projects, split by language, UI toolkit and concern, so a project loads only the layers that apply to it.",
+  "author": {
+    "name": "ahmmedrejowan",
+    "url": "https://github.com/skyl-dev"
+  },
+  "homepage": "https://skyl.dev",
+  "repository": "https://github.com/skyl-dev/skyl",
+  "license": "MIT",
+  "keywords": [
+    "skyl",
+    "android",
+    "rules",
+    "skills"
+  ]
+}

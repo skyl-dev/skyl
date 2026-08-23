@@ -2,8 +2,9 @@
 name: android/db
 axis: topic
 family: android
+description: "Persistence and offline behaviour: where a value lives, what survives, transactions, migrations, and what happens when the network does not answer. Use when the app stores data on the device."
 requires: [android/core]
-version: 1.0.0
+version: 1.0.1
 authors: [ahmmedrejowan]
 agent_sections: [rules]
 detect:

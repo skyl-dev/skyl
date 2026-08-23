@@ -2,8 +2,9 @@
 name: android/security
 axis: topic
 family: android
+description: "Keeping a secret on a device you do not control: key storage, backup, intents, and client-side checks that are signals rather than controls. Use when the app holds a credential or talks to a server."
 requires: [android/core]
-version: 1.1.0
+version: 1.1.1
 authors: [ahmmedrejowan]
 agent_sections: [rules]
 retired: []

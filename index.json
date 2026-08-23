@@ -12,8 +12,9 @@
     {
       "name": "android/compose",
       "axis": "framework",
+      "description": "\"Jetpack Compose mechanics: what belongs in an effect rather than the composable body, how state is hoisted and remembered, and what makes a list recompose. Use when the UI is Compose.\"",
       "family": "android",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "requires": [
         "android/core"
       ],
@@ -62,8 +63,9 @@
     {
       "name": "android/core",
       "axis": "core",
+      "description": "\"Android architecture and platform decisions: where state lives, what survives process death, what work leaves the main thread, and what the platform can take away. Applies to any Android project, whatever the language or UI toolkit.\"",
       "family": "android",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "requires": [],
       "detect": {
         "file": [
@@ -113,8 +115,9 @@
     {
       "name": "android/db",
       "axis": "topic",
+      "description": "\"Persistence and offline behaviour: where a value lives, what survives, transactions, migrations, and what happens when the network does not answer. Use when the app stores data on the device.\"",
       "family": "android",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "requires": [
         "android/core"
       ],
@@ -158,8 +161,9 @@
     {
       "name": "android/di",
       "axis": "topic",
+      "description": "\"The object graph: what lives how long, what may depend on what, and when a wiring mistake is discovered. Use when the project uses Hilt, Dagger or Koin.\"",
       "family": "android",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "requires": [
         "android/core"
       ],
@@ -196,8 +200,9 @@
     {
       "name": "android/images",
       "axis": "topic",
+      "description": "\"Images that arrive at runtime, fetched or picked or decoded: caching, sizing, cancellation, and what a picker actually hands back. Use when images are part of the product.\"",
       "family": "android",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "requires": [
         "android/core"
       ],
@@ -234,8 +239,9 @@
     {
       "name": "android/java",
       "axis": "language",
+      "description": "\"Java on Android without the language features Kotlin has: threading, equality, resource handling, and interoperating with Kotlin. Use for a Java codebase or the Java half of a mixed one.\"",
       "family": "android",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "requires": [
         "android/core"
       ],
@@ -274,8 +280,9 @@
     {
       "name": "android/kotlin",
       "axis": "language",
+      "description": "\"Kotlin mechanics on Android: coroutine scope and cancellation, flow collection, nullability and equality. Use when most of the code is Kotlin.\"",
       "family": "android",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "requires": [
         "android/core"
       ],
@@ -311,8 +318,9 @@
     {
       "name": "android/mvvm",
       "axis": "topic",
+      "description": "\"The shape of the layer graph: which layers exist, which way dependencies point, and what each one may touch. Use when the app has a ViewModel layer.\"",
       "family": "android",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "requires": [
         "android/core"
       ],
@@ -348,8 +356,9 @@
     {
       "name": "android/networking",
       "axis": "topic",
+      "description": "\"Talking to a server: client configuration, what comes back, what happens when it does not, and how a request is authorised. Use when the app makes HTTP calls.\"",
       "family": "android",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "requires": [
         "android/core"
       ],
@@ -390,8 +399,9 @@
     {
       "name": "android/permissions",
       "axis": "topic",
+      "description": "\"Runtime permissions: whether to ask at all, how to ask, and what the app does with every answer including the silent ones. Use when the app touches the camera, location, microphone, files or notifications.\"",
       "family": "android",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "requires": [
         "android/core"
       ],
@@ -424,8 +434,9 @@
     {
       "name": "android/security",
       "axis": "topic",
+      "description": "\"Keeping a secret on a device you do not control: key storage, backup, intents, and client-side checks that are signals rather than controls. Use when the app holds a credential or talks to a server.\"",
       "family": "android",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "requires": [
         "android/core"
       ],
@@ -469,8 +480,9 @@
     {
       "name": "android/testing",
       "axis": "topic",
+      "description": "\"What makes a test able to fail for the right reason: the shape of the seam, the scheduler it runs on, and what an assertion is allowed to know. Use when writing tests, or changing code to make one possible.\"",
       "family": "android",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "requires": [
         "android/core"
       ],
@@ -505,8 +517,9 @@
     {
       "name": "android/xml",
       "axis": "framework",
+      "description": "\"The View system: layouts, adapters, RecyclerView, ViewBinding, and the seam where a ComposeView sits inside a View hierarchy. Use when the UI is XML layouts.\"",
       "family": "android",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "requires": [
         "android/core"
       ],

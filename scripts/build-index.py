@@ -66,6 +66,7 @@ for f in sorted(root.rglob('SKILL.md')):
     skills.append({
         'name': fm.get('name'),
         'axis': fm.get('axis'),
+        'description': fm.get('description'),
         'family': fm.get('family'),
         'version': fm.get('version'),
         'requires': fm.get('requires', []),

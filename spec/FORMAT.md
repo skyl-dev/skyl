@@ -16,6 +16,9 @@ skills/android/kotlin/
 name: android/kotlin          # family/skill, the installable identity
 axis: language                # core | language | framework | service | topic
 family: android
+description: "Kotlin mechanics on Android: coroutine scope and cancellation, flow
+  collection, nullability and equality. Use when most of the code is Kotlin."   # quoted: a
+                              # plain YAML scalar may not contain a colon followed by a space
 requires: [android/core]      # skills that must be installed alongside
 version: 1.1.0                # semver; a retirement is a minor bump
 authors: [ahmmedrejowan]
@@ -25,6 +28,11 @@ detect:                       # how a project is recognised
   gradle_dependency: ["org.jetbrains.kotlin:kotlin-stdlib"]
 ---
 ```
+
+**`description` is one line, and it is read by both audiences.** A person scanning the registry
+decides from it whether to open the skill; a model deciding whether a skill is relevant reads the
+same sentence. Say what the skill governs, then when it applies. It is metadata, so adding or
+rewording one is a patch.
 
 **`agent_sections` is the load-bearing field.** The file is written for two readers. An installer
 gives the agent only the listed sections; everything else, `## Why`, `## Pitfalls`

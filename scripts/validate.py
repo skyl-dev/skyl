@@ -11,7 +11,7 @@ import re, sys, pathlib
 
 root = pathlib.Path(sys.argv[1] if len(sys.argv) > 1 else 'skills')
 AXES = {'core', 'language', 'framework', 'service', 'topic'}
-REQUIRED = ['name', 'axis', 'family', 'version', 'agent_sections']
+REQUIRED = ['name', 'axis', 'family', 'description', 'version', 'agent_sections']
 HUMAN_SECTIONS = ['## Why', '## Pitfalls', '## Provenance']
 
 errors, warnings, skills = [], [], 0

@@ -2,8 +2,9 @@
 name: android/xml
 axis: framework
 family: android
+description: "The View system: layouts, adapters, RecyclerView, ViewBinding, and the seam where a ComposeView sits inside a View hierarchy. Use when the UI is XML layouts."
 requires: [android/core]
-version: 1.0.0
+version: 1.0.1
 authors: [ahmmedrejowan]
 agent_sections: [rules]
 retired: [HOST-3]
