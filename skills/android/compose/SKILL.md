@@ -8,8 +8,15 @@ authors: [ahmmedrejowan]
 agent_sections: [rules]
 retired: [INTEROP-1, INTEROP-3]
 detect:
- gradle_dependency: ["androidx.compose.ui:ui", "androidx.compose.runtime:runtime"]
- gradle_plugin: ["org.jetbrains.kotlin.plugin.compose"]
+  gradle_dependency:
+    - "androidx.compose.ui:ui"
+    - "androidx.compose.runtime:runtime"
+    - "androidx.compose.foundation:foundation"
+    - "androidx.compose.material3:material3"
+    - "androidx.compose.material:material"
+    - "androidx.compose:compose-bom"
+    - "androidx.activity:activity-compose"
+  gradle_plugin: ["org.jetbrains.kotlin.plugin.compose"]
 ---
 
 ## Rules

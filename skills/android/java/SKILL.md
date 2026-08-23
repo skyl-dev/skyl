@@ -7,7 +7,7 @@ version: 1.0.0
 authors: [ahmmedrejowan]
 agent_sections: [rules]
 detect:
- file: ["**/src/main/java/**/*.java"]
+  file: ["**/src/main/java/**/*.java"]
 ---
 
 ## Rules

@@ -8,12 +8,12 @@ authors: [ahmmedrejowan]
 agent_sections: [rules]
 retired: [REACH-1, TIME-1, STATE-1, STREAM-1]
 detect:
- gradle_dependency:
- - "org.jetbrains.kotlinx:kotlinx-coroutines-test"
- - "app.cash.turbine:turbine"
- - "org.robolectric:robolectric"
- - "androidx.compose.ui:ui-test-junit4"
- - "androidx.test.espresso:espresso-core"
+  gradle_dependency:
+    - "org.jetbrains.kotlinx:kotlinx-coroutines-test"
+    - "app.cash.turbine:turbine"
+    - "org.robolectric:robolectric"
+    - "androidx.compose.ui:ui-test-junit4"
+    - "androidx.test.espresso:espresso-core"
 ---
 
 ## Rules

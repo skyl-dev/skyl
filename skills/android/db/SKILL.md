@@ -7,12 +7,12 @@ version: 1.0.0
 authors: [ahmmedrejowan]
 agent_sections: [rules]
 detect:
- gradle_dependency:
- - "androidx.room:room-runtime"
- - "androidx.datastore:datastore"
- - "androidx.datastore:datastore-preferences"
- - "app.cash.sqldelight"
- file: ["**/schemas/*.json"]
+  gradle_dependency:
+    - "androidx.room:room-runtime"
+    - "androidx.datastore:datastore"
+    - "androidx.datastore:datastore-preferences"
+    - "app.cash.sqldelight"
+  file: ["**/schemas/*.json"]
 ---
 
 ## Rules

@@ -8,7 +8,7 @@ authors: [ahmmedrejowan]
 agent_sections: [rules]
 retired: [ASK-3]
 detect:
- manifest_element: ["uses-permission"]
+  manifest_element: ["uses-permission"]
 ---
 
 ## Rules

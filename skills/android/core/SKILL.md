@@ -8,8 +8,8 @@ authors: [ahmmedrejowan]
 agent_sections: [rules]
 retired: [BUILD-1, BUILD-2]
 detect:
- file: ["**/src/main/AndroidManifest.xml"]
- gradle_plugin: ["com.android.application", "com.android.library"]
+  file: ["**/src/main/AndroidManifest.xml"]
+  gradle_plugin: ["com.android.application", "com.android.library"]
 ---
 
 ## Rules

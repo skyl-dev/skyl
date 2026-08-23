@@ -8,9 +8,9 @@ authors: [ahmmedrejowan]
 agent_sections: [rules]
 retired: [HOST-3]
 detect:
- file: ["**/src/main/res/layout/*.xml"]
- gradle_property: ["android.buildFeatures.viewBinding", "android.buildFeatures.dataBinding"]
- gradle_dependency: ["androidx.recyclerview:recyclerview", "com.google.android.material:material"]
+  file: ["**/src/main/res/layout/*.xml"]
+  gradle_property: ["android.buildFeatures.viewBinding", "android.buildFeatures.dataBinding"]
+  gradle_dependency: ["androidx.recyclerview:recyclerview", "com.google.android.material:material"]
 ---
 
 ## Rules

@@ -7,11 +7,11 @@ version: 1.0.0
 authors: [ahmmedrejowan]
 agent_sections: [rules]
 detect:
- gradle_dependency:
- - "com.google.dagger:hilt-android"
- - "io.insert-koin:koin-android"
- - "com.google.dagger:dagger"
- - "dev.zacsweers.metro:runtime"
+  gradle_dependency:
+    - "com.google.dagger:hilt-android"
+    - "io.insert-koin:koin-android"
+    - "com.google.dagger:dagger"
+    - "dev.zacsweers.metro:runtime"
 ---
 
 ## Rules

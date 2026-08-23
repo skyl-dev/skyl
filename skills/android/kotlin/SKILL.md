@@ -8,8 +8,8 @@ authors: [ahmmedrejowan]
 agent_sections: [rules]
 retired: [ASYNC-1, TYPE-2, SER-1]
 detect:
- file: ["**/*.kt"]
- gradle_plugin: ["org.jetbrains.kotlin.android"]
+  file: ["**/*.kt"]
+  gradle_plugin: ["org.jetbrains.kotlin.android"]
 ---
 
 ## Rules

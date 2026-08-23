@@ -8,12 +8,12 @@ authors: [ahmmedrejowan]
 agent_sections: [rules]
 retired: []
 detect:
- gradle_dependency:
- - "androidx.security:security-crypto"
- - "androidx.biometric:biometric"
- - "com.google.android.play:integrity"
- - "net.zetetic:sqlcipher-android"
- manifest_attribute: ["android:allowBackup", "android:dataExtractionRules"]
+  gradle_dependency:
+    - "androidx.security:security-crypto"
+    - "androidx.biometric:biometric"
+    - "com.google.android.play:integrity"
+    - "net.zetetic:sqlcipher-android"
+  manifest_attribute: ["android:allowBackup", "android:dataExtractionRules"]
 ---
 
 ## Rules

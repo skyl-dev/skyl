@@ -8,8 +8,8 @@ authors: [ahmmedrejowan]
 agent_sections: [rules]
 retired: [VM-1]
 detect:
- file: ["**/*ViewModel.kt", "**/*ViewModel.java"]
- gradle_dependency: ["androidx.lifecycle:lifecycle-viewmodel"]
+  file: ["**/*ViewModel.kt", "**/*ViewModel.java"]
+  gradle_dependency: ["androidx.lifecycle:lifecycle-viewmodel"]
 ---
 
 ## Rules

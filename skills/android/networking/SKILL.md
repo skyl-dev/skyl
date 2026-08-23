@@ -7,11 +7,11 @@ version: 1.0.0
 authors: [ahmmedrejowan]
 agent_sections: [rules]
 detect:
- gradle_dependency:
- - "com.squareup.retrofit2:retrofit"
- - "com.squareup.okhttp3:okhttp"
- - "io.ktor:ktor-client-core"
- - "io.ktor:ktor-client-android"
+  gradle_dependency:
+    - "com.squareup.retrofit2:retrofit"
+    - "com.squareup.okhttp3:okhttp"
+    - "io.ktor:ktor-client-core"
+    - "io.ktor:ktor-client-android"
 ---
 
 ## Rules

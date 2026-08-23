@@ -8,12 +8,12 @@ authors: [ahmmedrejowan]
 agent_sections: [rules]
 retired: [MEM-2, USER-1, TEST-1]
 detect:
- gradle_dependency:
- - "io.coil-kt.coil3:coil-compose"
- - "io.coil-kt:coil-compose"
- - "io.coil-kt:coil"
- - "com.github.bumptech.glide:glide"
- - "com.squareup.picasso:picasso"
+  gradle_dependency:
+    - "io.coil-kt.coil3:coil-compose"
+    - "io.coil-kt:coil-compose"
+    - "io.coil-kt:coil"
+    - "com.github.bumptech.glide:glide"
+    - "com.squareup.picasso:picasso"
 ---
 
 ## Rules
