@@ -1,0 +1,53 @@
+# Tell the site to rebuild, once this repository's own checks have passed.
+#
+# skyl.dev is a rendering of this repository: it reads skills/, evidence/ and spec/ at build
+# time. Its host watches the repository the site source lives in, which is not this one, so a
+# skill published here changes what the site should say and nothing tells the site to say it.
+#
+# Gated on the checks workflow rather than on the push, so the site is never rebuilt from a
+# state this repository's own validators rejected. A failed build there would leave the last
+# good deploy up, which is survivable, but a green build carrying a skill that fails validate.py
+# is not.
+#
+# No path filter. A push here is almost always content the site renders, and the cost of an
+# unnecessary rebuild is a minute of somebody else's compute, where the cost of a filter that
+# is subtly wrong is a site that is quietly stale. Erring toward rebuilding is the cheaper
+# mistake.
+name: deploy site
+
+on:
+  workflow_run:
+    workflows: [checks]
+    types: [completed]
+    branches: [main]
+  # for a rebuild that no push caused: a hand-edited deploy, or a site change that needs the
+  # registry re-read
+  workflow_dispatch:
+
+jobs:
+  rebuild:
+    # workflow_run fires on failure too, and says so rather than not firing
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call the deploy hook
+        env:
+          HOOK: ${{ secrets.SKYL_SITE_DEPLOY_HOOK }}
+        run: |
+          if [ -z "$HOOK" ]; then
+            echo "::error::SKYL_SITE_DEPLOY_HOOK is not set, so the site will not rebuild."
+            echo "Create a deploy hook in the site project and add it as a repository secret."
+            exit 1
+          fi
+          # -f so a non-2xx is a failed step rather than a green tick over an error body, and
+          # the response is printed either way: a hook that has been deleted answers 404 with
+          # a body that says which one.
+          code=$(curl -sS -f -X POST "$HOOK" -o /tmp/hook.json -w '%{http_code}') || {
+            echo "::error::the deploy hook rejected the request"
+            cat /tmp/hook.json || true
+            exit 1
+          }
+          echo "deploy hook accepted, HTTP $code"
+          cat /tmp/hook.json
