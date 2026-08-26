@@ -56,7 +56,13 @@ never from corpus frequency.
 ## Status
 
 Pre-alpha. The `android` family is complete and measured; the spec is being written from it rather
-than ahead of it. Nothing is stable, and the CLI does not exist yet.
+than ahead of it.
+
+The CLI exists and is published: `npx skyl.dev scan` reads a project and proposes what fits, and
+[skyl.dev](https://skyl.dev) renders this registry, including the `registry.json` the CLI installs
+from. Skill content is versioned and every install is recorded with a content hash, so an upgrade
+is a diff you can read. What is not stable is the shape of the registry itself: axes, family
+naming, and how a service layer composes are all still moving.
 
 ## Layout
 
