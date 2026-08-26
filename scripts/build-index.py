@@ -14,6 +14,13 @@ import json, re, sys, pathlib
 
 root = pathlib.Path(sys.argv[1] if len(sys.argv) > 1 else 'skills')
 
+def strip_quotes(val):
+    """One layer of YAML quoting, and only when it wraps the whole scalar."""
+    if len(val) >= 2 and val[0] == val[-1] and val[0] in '"\'':
+        return val[1:-1]
+    return val
+
+
 def frontmatter(text):
     """Minimal YAML for the shapes this format uses. No dependency on pyyaml."""
     fm = text.split('---', 2)[1]
@@ -27,7 +34,10 @@ def frontmatter(text):
             if val.startswith('[') and val.endswith(']'):
                 out[key] = [x.strip() for x in val[1:-1].split(',') if x.strip()]
             elif val:
-                out[key] = val
+                # a quoted scalar keeps its quotes without this, and `description` is the
+                # one field here that is always quoted, because it has a colon in it. The
+                # index shipped every description wrapped in a literal pair of quotes.
+                out[key] = strip_quotes(val)
             else:
                 out[key] = {}
             continue
